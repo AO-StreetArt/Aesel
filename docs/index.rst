@@ -7,5 +7,6 @@
    pages/quickstart.rst
    pages/components.rst
    pages/design.rst
+   pages/deployment.rst
 
 .. include:: ../README.rst
