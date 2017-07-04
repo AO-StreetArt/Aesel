@@ -5,5 +5,7 @@
    :caption: Contents:
 
    pages/quickstart.rst
+   pages/components.rst
+   pages/design.rst
 
 .. include:: ../README.rst
