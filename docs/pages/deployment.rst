@@ -1,7 +1,7 @@
-.. _quickstart:
+.. _deployment:
 
-Getting Started with Aesel
-==========================
+Deploying Aesel
+===============
 
 :ref:`Go Home <index>`
 
