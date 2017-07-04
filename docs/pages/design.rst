@@ -1,5 +1,5 @@
-Distributed Visualization Server Design Document
-================================================
+Aesel Design
+============
 
 Section 1: Abstract
 -------------------
