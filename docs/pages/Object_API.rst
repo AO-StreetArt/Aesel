@@ -1,14 +1,3 @@
-Object API
-----------
-
-An Object is represented by a transformation matrix representing it’s
-position in 3-space, as well as a collection of Assets (Mesh files,
-Texture files, Shader scripts, etc.). Objects are meant to be interacted
-with by individual devices, and these changes will be streamed to either
-devices via the forthcoming UDP API.
-
-Objects are stored under the region, and then by key.
-
 Object Creation/Update
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -194,5 +183,3 @@ Sample Response
 }
 
 ]}
-
-

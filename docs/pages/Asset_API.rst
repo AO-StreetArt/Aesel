@@ -1,11 +1,3 @@
-Asset API
----------
-
-An Asset is associated to an Object or Scene, and is an external
-resource needed to render the objects and scene around the device (Mesh
-files, Texture files, Shader scripts, etc.). The Asset API allows access
-to these external files.
-
 Asset Creation/Update
 ~~~~~~~~~~~~~~~~~~~~~
 

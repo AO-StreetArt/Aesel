@@ -1,10 +1,3 @@
-User Device API
----------------
-
-A User Device is a single device which is performing rendering for a
-viewer. This device could be anything from a mobile phone, to a pair of
-glasses, to a gaming console.
-
 DeviceDevice Creation/Update
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

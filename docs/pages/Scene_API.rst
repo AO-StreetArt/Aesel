@@ -1,11 +1,3 @@
-Scene API
----------
-
-A Scene is a group of Objects associated to a particular Latitude and
-Longitude. Devices move between scenes as they move around the earth and
-the scenes they are registered to tells them what device updates to
-receive.
-
 Scene Creation/Update
 ~~~~~~~~~~~~~~~~~~~~~
 
