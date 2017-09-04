@@ -114,7 +114,7 @@ supply Aesel with a correction in order to correct the transformation.
 Parameters
 ^^^^^^^^^^
 
--  device\_id (string) – unique identifier for the device registering to
+-  device\_id (string) – unique identifier for the device registered to
    the scene
 
 Post Data
