@@ -1,4 +1,4 @@
-DeviceDevice Creation/Update
+Device Creation/Update
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create or Update Device information.
