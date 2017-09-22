@@ -1,10 +1,10 @@
-Aesel Rest API
+Aesel HTTP API
 ==============
 
 Abstract
 --------
 
-This page will provide details on the Restful API for the Aesel
+This page will provide details on the HTTP API for the Aesel
 Server. The Aesel Server is designed to facilitate communication between
 different Augmented Reality Devices, and this communication will be via
 both HTTP and UDP. This document will only discuss the UDP Protocols in
