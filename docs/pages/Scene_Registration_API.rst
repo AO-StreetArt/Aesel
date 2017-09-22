@@ -8,7 +8,7 @@ on. If the specified scene is not present, then it will be created.
 +----------+-----------------------------------------------------+
 | Method   | Path                                                |
 +----------+-----------------------------------------------------+
-| PUT      | *<base\_url>*/v1/scene/:region/:name/registration   |
+| PUT      | *<base\_url>*/v1/scene/:name/registration           |
 +----------+-----------------------------------------------------+
 
 Parameters
@@ -21,7 +21,7 @@ Sample Request
 ^^^^^^^^^^^^^^
 
 \`$ curl -X PUT
-`http://aesel-test/v1/scene/ <http://aesel-test/v1/scene/us-md-mc/wjhs/registration?device_id=abcdef123>`__\ `us-md-mc/wjhs/registration?device\_id=abcdef123 <http://aesel-test/v1/scene/us-md-mc/wjhs/registration?device_id=abcdef123>`__\ \`
+ http://aesel-test/v1/scene/wjhs/registration?device_id=abcdef123\`
 
 Sample Response
 ^^^^^^^^^^^^^^^
@@ -75,7 +75,7 @@ pre-calculate those needed for future registrations.
 +----------+-----------------------------------------------------+
 | Method   | Path                                                |
 +----------+-----------------------------------------------------+
-| DELETE   | *<base\_url>*/v1/scene/:region/:name/registration   |
+| DELETE   | *<base\_url>*/v1/scene/:name/registration           |
 +----------+-----------------------------------------------------+
 
 Parameters
@@ -88,7 +88,7 @@ Sample Request
 ^^^^^^^^^^^^^^
 
 \`$ curl -X DELETE
-`http://aesel-test/v1/scene/ <http://aesel-test/v1/scene/us-md-mc/wjhs/registration?device_id=abcdef123>`__\ `us-md-mc/wjhs/registration?device\_id=abcdef123 <http://aesel-test/v1/scene/us-md-mc/wjhs/registration?device_id=abcdef123>`__\ \`
+ http://aesel-test/v1/scene/wjhs/registration?device_id=abcdef123\`
 
 Sample Response
 ^^^^^^^^^^^^^^^
@@ -108,7 +108,7 @@ supply Aesel with a correction in order to correct the transformation.
 +----------+-----------------------------------------------------+
 | Method   | Path                                                |
 +----------+-----------------------------------------------------+
-| POST     | *<base\_url>*/v1/scene/:region/:name/registration   |
+| POST     | *<base\_url>*/v1/scene/:name/registration   |
 +----------+-----------------------------------------------------+
 
 Parameters
@@ -136,7 +136,7 @@ Sample Request
 ^^^^^^^^^^^^^^
 
 \`$ curl -H “Content-Type: application/json” -X POST -d ‘DATA\_STRING’
-`http://aesel-test/v1/scene/ <http://aesel-test/v1/scene/us-md-mc/wjhs/registration?device_id=abcdef123>`__\ `us-md-mc/wjhs/registration?device\_id=abcdef123 <http://aesel-test/v1/scene/us-md-mc/wjhs/registration?device_id=abcdef123>`__\ \`
+ http://aesel-test/v1/scene/wjhs/registration?device_id=abcdef123\`
 
 Sample Response
 ^^^^^^^^^^^^^^^

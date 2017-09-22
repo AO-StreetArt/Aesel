@@ -17,9 +17,8 @@ Assumptions
 
 -  The base URL of the server being exposed will be represented by
    *<base\_url>* within this document.
--  Scenes are identified by a geographical region and a name. Within
-   this document, a scene’s region and name will be represented by
-   :region and :name, respectively.
+-  Scenes are identified by a name. Within this document,
+   a scene’s name will be represented by :name.
 -  The root URL for all requests is *<base\_url>*/v1. This will hold
    until v2.0.0 is released, when non-backwards-compatible changes will
    be made. At this time, the version number in the root URL will be

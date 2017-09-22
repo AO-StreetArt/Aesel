@@ -7,7 +7,7 @@ API is available.
 +----------+----------------------------------------------------+
 | Method   | Path                                               |
 +----------+----------------------------------------------------+
-| POST     | *<base\_url>*/v1/scene/:region/:name/object/:key   |
+| POST     | *<base\_url>*/v1/scene/:name/object/:key           |
 +----------+----------------------------------------------------+
 
 Post Data
@@ -21,6 +21,8 @@ Post Data
 {
 
 “name”: “Test Object 123464”,
+
+"region": "US-MD",
 
 “type”: “Curve”,
 
@@ -42,7 +44,7 @@ Sample Request
 ^^^^^^^^^^^^^^
 
 \`$ curl -H “Content-Type: application/json” -X POST -d ‘DATA\_STRING’
-`http://aesel-test/v1/scene/ <http://aesel-test/v1/scene/us-md-mc/wjhs/object/123/>`__\ `us-md-mc/wjhs/object/123/ <http://aesel-test/v1/scene/us-md-mc/wjhs/object/123/>`__\ \`
+ http://aesel-test/v1/scene/wjhs/object/123/\`
 
 Sample Response
 ^^^^^^^^^^^^^^^
@@ -58,14 +60,13 @@ is available.
 +----------+----------------------------------------------------+
 | Method   | Path                                               |
 +----------+----------------------------------------------------+
-| GET      | *<base\_url>*/v1/scene/:region/:name/object/:key   |
+| GET      | *<base\_url>*/v1/scene/:name/object/:key           |
 +----------+----------------------------------------------------+
 
 Sample Request
 ^^^^^^^^^^^^^^
 
-\`$ curl -X GET
-`http://aesel-test/v1/scene/ <http://aesel-test/v1/scene/us-md-mc/wjhs/object/123/>`__\ `us-md-mc/wjhs/object/123/ <http://aesel-test/v1/scene/us-md-mc/wjhs/object/123/>`__\ \`
+\`$ curl -X GET http://aesel-test/v1/scene/wjhs/object/123/\`
 
 Sample Response
 ^^^^^^^^^^^^^^^
@@ -77,6 +78,8 @@ Sample Response
 “key”:”5951dd759af59c00015b1409”,
 
 “name”:”Test Object 123463”,
+
+"region":"US-MD",
 
 “scene”:”DEFGHIJ123463”,
 
@@ -102,14 +105,13 @@ When a device needs to remove an object, the Deletion API is available.
 +----------+----------------------------------------------------+
 | Method   | Path                                               |
 +----------+----------------------------------------------------+
-| DELETE   | *<base\_url>*/v1/scene/:region/:name/object/:key   |
+| DELETE   | *<base\_url>*/v1/scene/:name/object/:key           |
 +----------+----------------------------------------------------+
 
 Sample Request
 ^^^^^^^^^^^^^^
 
-\`$ curl -X DELETE
-`http://aesel-test/v1/scene/ <http://aesel-test/v1/scene/us-md-mc/wjhs/object/123/>`__\ `us-md-mc/wjhs/object/123/ <http://aesel-test/v1/scene/us-md-mc/wjhs/object/123/>`__\ \`
+\`$ curl -X DELETE http://aesel-test/v1/scene/wjhs/object/123/\'
 
 Sample Response
 ^^^^^^^^^^^^^^^
@@ -125,13 +127,14 @@ the object key available, the Query API is available.
 +----------+------------------------------------------------+
 | Method   | Path                                           |
 +----------+------------------------------------------------+
-| GET      | *<base\_url>*/v1/scene/:region/:name/object/   |
+| GET      | *<base\_url>*/v1/scene/:name/object/           |
 +----------+------------------------------------------------+
 
 Parameters
 ^^^^^^^^^^
 
 -  name (string) – Optional. The name of the object to query for
+-  region (string) - Optional. The region of the object to query for
 -  type (string) – Optional. The type of object to retrieve
 -  subtype (string) – Optional. The subtype of object to retrieve
 -  owner (string) – Optional. Return objects owned by a particular
@@ -141,7 +144,7 @@ Sample Request
 ^^^^^^^^^^^^^^
 
 \`$ curl -X GET
-`http://aesel-test/v1/scene/ <http://aesel-test/v1/scene/us-md-mc/wjhs/object/?type=Mesh&subtype=Cube>`__\ `us-md-mc/wjhs/object/?type=Mesh&subtype=Cube <http://aesel-test/v1/scene/us-md-mc/wjhs/object/?type=Mesh&subtype=Cube>`__\ \`
+ http://aesel-test/v1/scene/us-md-mc/wjhs/object/?type=Mesh&subtype=Cube\`
 
 Sample Response
 ^^^^^^^^^^^^^^^
@@ -151,6 +154,8 @@ Sample Response
 {
 
 “name”:”Test Object 123465”,
+
+"region":"US-MD",
 
 “scene”:”DEFGHIJ123465”,
 
@@ -167,6 +172,8 @@ Sample Response
 }, {
 
 “name”:”Test Object 123456”,
+
+"region":"US-MD",
 
 “scene”:”DEFGHIJ123456”,
 

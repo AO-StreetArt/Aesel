@@ -7,7 +7,7 @@ to it, this API is available.
 +----------+----------------------------------------+
 | Method   | Path                                   |
 +----------+----------------------------------------+
-| POST     | *<base\_url>*/v1/scene/:region/:name   |
+| POST     | *<base\_url>*/v1/scene/:name           |
 +----------+----------------------------------------+
 
 Post Data
@@ -19,6 +19,8 @@ Post Data
 -  Example:
 
 {
+
+"region":"US-MD",
 
 “latitude”:124.0,
 
@@ -34,7 +36,7 @@ Sample Request
 ^^^^^^^^^^^^^^
 
 \`$ curl -H “Content-Type: application/json” -X POST -d ‘DATA\_STRING’
-`http://aesel-test/v1/scene/ <http://aesel-test/v1/scene/us-md-mc/wjhs/>`__\ `us-md-mc/wjhs/ <http://aesel-test/v1/scene/us-md-mc/wjhs/>`__\ \`
+ http://aesel-test/v1/scene/wjhs/\`
 
 Sample Response
 ^^^^^^^^^^^^^^^
@@ -50,14 +52,13 @@ and longitude.
 +----------+----------------------------------------+
 | Method   | Path                                   |
 +----------+----------------------------------------+
-| GET      | *<base\_url>*/v1/scene/:region/:name   |
+| GET      | *<base\_url>*/v1/scene/:name           |
 +----------+----------------------------------------+
 
 Sample Request
 ^^^^^^^^^^^^^^
 
-\`$ curl -X GET
-`http://aesel-test/v1/scene/ <http://aesel-test/v1/scenes?latitude=123.01?longitude=125.4?distance=10.0>`__\ `us-md-mc/wjhs <http://aesel-test/v1/scenes?latitude=123.01?longitude=125.4?distance=10.0>`__/\`
+\`$ curl -X GET http://aesel-test/v1/scene/wjhs\`
 
 Sample Response
 ^^^^^^^^^^^^^^^
@@ -67,6 +68,8 @@ Sample Response
 {
 
 “key”:”jklmnop”,
+
+"region":"US-MD",
 
 “latitude”:124.0,
 
@@ -93,14 +96,13 @@ prior to deletion.
 +----------+----------------------------------------+
 | Method   | Path                                   |
 +----------+----------------------------------------+
-| DELETE   | *<base\_url>*/v1/scene/:region/:name   |
+| DELETE   | *<base\_url>*/v1/scene/:name           |
 +----------+----------------------------------------+
 
 Sample Request
 ^^^^^^^^^^^^^^
 
-\`$ curl -X DELETE
-`http://aesel-test/v1/scene/ <http://aesel-test/v1/scenes?latitude=123.01?longitude=125.4?distance=10.0>`__\ `us-md-mc/wjhs <http://aesel-test/v1/scenes?latitude=123.01?longitude=125.4?distance=10.0>`__/\`
+\`$ curl -X DELETE http://aesel-test/v1/scenes/wjhs\`
 
 Sample Response
 ^^^^^^^^^^^^^^^
@@ -153,7 +155,7 @@ Sample Request
 ^^^^^^^^^^^^^^
 
 \`$ curl -H “Content-Type: application/json” -X POST -d ‘DATA\_STRING’
-`http://aesel-test/v1/scene/ <http://aesel-test/v1/scene/data/?latitude=123.01&longitude=125.4&distance=10.0>`__\ `data/ <http://aesel-test/v1/scene/data/?latitude=123.01&longitude=125.4&distance=10.0>`__\ \`
+ http://aesel-test/v1/scene/data/?latitude=123.01&longitude=125.4&distance=10.0\`
 
 Sample Response
 ^^^^^^^^^^^^^^^
@@ -166,7 +168,7 @@ Sample Response
 
 ”name”:”TestScene10”,
 
-”region”:”wjhs”,
+”region”:”US-MD”,
 
 ”latitude”:124.0,
 
