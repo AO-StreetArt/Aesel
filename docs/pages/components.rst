@@ -11,6 +11,12 @@ both high-availability, and scalablity to respond quickly to large changes in vo
 
 Below you can find the components that comprise the Aesel Architecture:
 
+Adrestia
+--------
+
+* `Home Page <https://github.com/AO-StreetArt/Adrestia>`__
+* `Documentation <http://adrestia.readthedocs.io/en/latest/>`__
+
 CLyman
 ------
 
