@@ -23,6 +23,22 @@ Sample Request
 \`$ curl -X PUT
  http://aesel-test/v1/scene/wjhs/registration?device_id=abcdef123\`
 
+ Put Data
+ ^^^^^^^^^
+
+ -  Optional
+ -  JSON Format
+ -  Includes Translation and Rotation, relative to the scene
+ -  Example:
+
+ {
+
+ translation: [0,0,0],
+
+ rotation: [45,1,0,0]
+
+ }
+
 Sample Response
 ^^^^^^^^^^^^^^^
 
