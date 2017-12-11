@@ -16,12 +16,14 @@ Parameters
 
 -  device\_id (string) – Required. Unique identifier for the device
    registering to the scene
+-  hostname (string) - Required.  Hostname of the device for UDP Communications
+-  port (integer) - Required.  Port of the device for UDP Communications
 
 Sample Request
 ^^^^^^^^^^^^^^
 
 \`$ curl -X PUT
- http://aesel-test/v1/scene/wjhs/registration?device_id=abcdef123\`
+ http://aesel-test/v1/scene/wjhs/registration?device_id=abcdef123&hostname=test&port=123\`
 
  Put Data
  ^^^^^^^^^
