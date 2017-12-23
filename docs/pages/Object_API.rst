@@ -4,11 +4,11 @@ Object Creation/Update
 When a device needs to create or update an object, the Creation/Update
 API is available.
 
-+----------+----------------------------------------------------+
-| Method   | Path                                               |
-+----------+----------------------------------------------------+
-| POST     | *<base\_url>*/v1/scene/:name/object/:key           |
-+----------+----------------------------------------------------+
++----------+-----------------------------------------------------+
+| Method   | Path                                                |
++----------+-----------------------------------------------------+
+| POST     | *<base\_url>*/v1/scene/:scene_name/object/:obj_name |
++----------+-----------------------------------------------------+
 
 Post Data
 ^^^^^^^^^
@@ -57,11 +57,11 @@ Object Retrieval
 When a device needs to get the details of an object, the Retrieval API
 is available.
 
-+----------+----------------------------------------------------+
-| Method   | Path                                               |
-+----------+----------------------------------------------------+
-| GET      | *<base\_url>*/v1/scene/:name/object/:key           |
-+----------+----------------------------------------------------+
++----------+-----------------------------------------------------+
+| Method   | Path                                                |
++----------+-----------------------------------------------------+
+| GET      | *<base\_url>*/v1/scene/:scene_name/object/:obj_name |
++----------+-----------------------------------------------------+
 
 Sample Request
 ^^^^^^^^^^^^^^
@@ -77,7 +77,7 @@ Sample Response
 
 “key”:”5951dd759af59c00015b1409”,
 
-“name”:”Test Object 123463”,
+“name”:”123”,
 
 "region":"US-MD",
 
@@ -102,11 +102,11 @@ Object Deletion
 
 When a device needs to remove an object, the Deletion API is available.
 
-+----------+----------------------------------------------------+
-| Method   | Path                                               |
-+----------+----------------------------------------------------+
-| DELETE   | *<base\_url>*/v1/scene/:name/object/:key           |
-+----------+----------------------------------------------------+
++----------+-----------------------------------------------------+
+| Method   | Path                                                |
++----------+-----------------------------------------------------+
+| DELETE   | *<base\_url>*/v1/scene/:scene_name/object/:obj_name |
++----------+-----------------------------------------------------+
 
 Sample Request
 ^^^^^^^^^^^^^^
@@ -122,19 +122,18 @@ Object Query
 ~~~~~~~~~~~~
 
 When a device needs to get the details of an object, but does not have
-the object key available, the Query API is available.
+the object name available, the Query API is available.
 
 +----------+------------------------------------------------+
 | Method   | Path                                           |
 +----------+------------------------------------------------+
-| GET      | *<base\_url>*/v1/scene/:name/object/           |
+| GET      | *<base\_url>*/v1/scene/:scene_name/object/     |
 +----------+------------------------------------------------+
 
 Parameters
 ^^^^^^^^^^
 
--  name (string) – Optional. The name of the object to query for
--  region (string) - Optional. The region of the object to query for
+-  scene (string) - Optional. The scene of the object to query for
 -  type (string) – Optional. The type of object to retrieve
 -  subtype (string) – Optional. The subtype of object to retrieve
 -  owner (string) – Optional. Return objects owned by a particular
@@ -190,3 +189,57 @@ Sample Response
 }
 
 ]}
+
+Object Lock
+~~~~~~~~~~~
+
+A locked object can only be updated by the lock owner, until the lock is released.
+Use this method to obtain the lock on the object
+
++----------+----------------------------------------------------------+
+| Method   | Path                                                     |
++----------+----------------------------------------------------------+
+| GET      | *<base\_url>*/v1/scene/:scene_name/object/:obj_name/lock |
++----------+----------------------------------------------------------+
+
+Parameters
+^^^^^^^^^^
+
+-  owner (string) - Required. The ID of the Device requesting the lock
+
+Sample Request
+^^^^^^^^^^^^^^
+
+\`$ curl -X GET http://aesel-test/v1/scene/wjhs/object/123/lock?owner=abc\'
+
+Sample Response
+^^^^^^^^^^^^^^^
+
+No JSON Response, only HTTP Success/Error Code
+
+Object Unlock
+~~~~~~~~~~~~~
+
+A locked object can only be updated by the lock owner, until the lock is released.
+Use this method to release the lock on the object
+
++----------+----------------------------------------------------------+
+| Method   | Path                                                     |
++----------+----------------------------------------------------------+
+| DELETE   | *<base\_url>*/v1/scene/:scene_name/object/:obj_name/lock |
++----------+----------------------------------------------------------+
+
+Parameters
+^^^^^^^^^^
+
+-  owner (string) - Required. The ID of the Device requesting the lock
+
+Sample Request
+^^^^^^^^^^^^^^
+
+\`$ curl -X DELETE http://aesel-test/v1/scene/wjhs/object/123/lock?owner=abc\'
+
+Sample Response
+^^^^^^^^^^^^^^^
+
+No JSON Response, only HTTP Success/Error Code

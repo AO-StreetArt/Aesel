@@ -25,8 +25,8 @@ Sample Request
 \`$ curl -X PUT
  http://aesel-test/v1/scene/wjhs/registration?device_id=abcdef123&hostname=test&port=123\`
 
- Put Data
- ^^^^^^^^^
+Put Data
+^^^^^^^^
 
  -  Optional
  -  JSON Format
@@ -126,7 +126,7 @@ supply Aesel with a correction in order to correct the transformation.
 +----------+-----------------------------------------------------+
 | Method   | Path                                                |
 +----------+-----------------------------------------------------+
-| POST     | *<base\_url>*/v1/scene/:name/registration   |
+| POST     | *<base\_url>*/v1/scene/:name/registration           |
 +----------+-----------------------------------------------------+
 
 Parameters
