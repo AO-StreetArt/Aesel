@@ -28,21 +28,6 @@ Assumptions
 -  All endpoints produce JSON Responses
 -  Query Parameters are optional unless otherwise specified
 
-Device API
-----------
-
-A User Device can be anything from a mobile phone to a gaming system,
-any external system that performs actual rendering for the end-user.
-Devices will be the recipients of the (forthcoming) UDP update streams,
-and will be the end user making HTTP calls to Aesel.
-
-The actual device object in the API is used to store UDP Connectivity
-information. While it is not necessary for the functionality documented
-here, it will be necessary in the future once the UDP update streams are
-implemented.
-
-.. include:: Device_API.rst
-
 Scene API
 ---------
 
