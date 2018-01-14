@@ -19,12 +19,6 @@ Parameters
 -  hostname (string) - Required.  Hostname of the device for UDP Communications
 -  port (integer) - Required.  Port of the device for UDP Communications
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -X PUT
- http://aesel-test/v1/scene/wjhs/registration?device_id=abcdef123&hostname=test&port=123\`
-
 Put Data
 ^^^^^^^^
 
@@ -41,40 +35,7 @@ Put Data
 
  }
 
-Sample Response
-^^^^^^^^^^^^^^^
-
-{
-
-“num\_records”:1, “scenes”:[
-
-{
-
-“key”:”jklmnop”,
-
-“devices”:[
-
-{
-
-“key”:”Ud\_132”,
-
-“transform”:{
-
-“translation”:[0.0,0.0,0.0],
-
-”rotation”:[0.0,0.0,0.0]
-
-}
-
-}
-
-]
-
-}
-
-]
-
-}
+.. include:: _examples/scene_register.rst
 
 Scene De-Registration
 ~~~~~~~~~~~~~~~~~~~~~
@@ -102,16 +63,7 @@ Parameters
 -  device\_id (string) – unique identifier for the device registering to
    the scene
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -X DELETE
- http://aesel-test/v1/scene/wjhs/registration?device_id=abcdef123\`
-
-Sample Response
-^^^^^^^^^^^^^^^
-
-No JSON Response, only HTTP Success/Error Code
+.. include:: _examples/scene_deregister.rst
 
 Scene Synchronization
 ~~~~~~~~~~~~~~~~~~~~~
@@ -150,13 +102,4 @@ rotation: [45,1,0,0]
 
 }
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -H “Content-Type: application/json” -X POST -d ‘DATA\_STRING’
- http://aesel-test/v1/scene/wjhs/registration?device_id=abcdef123\`
-
-Sample Response
-^^^^^^^^^^^^^^^
-
-No JSON Response, only HTTP Success/Error Code
+.. include:: _examples/scene_sync.rst

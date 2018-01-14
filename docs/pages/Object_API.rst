@@ -40,16 +40,7 @@ Post Data
 
 }
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -H “Content-Type: application/json” -X POST -d ‘DATA\_STRING’
- http://aesel-test/v1/scene/wjhs/object/123/\`
-
-Sample Response
-^^^^^^^^^^^^^^^
-
-{“num\_records”:1, “objects”:[{“key”:”5951dd759af59c00015b140b”}]}
+.. include:: _examples/object_create.rst
 
 Object Retrieval
 ~~~~~~~~~~~~~~~~
@@ -63,39 +54,7 @@ is available.
 | GET      | *<base\_url>*/v1/scene/:scene_name/object/:obj_name |
 +----------+-----------------------------------------------------+
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -X GET http://aesel-test/v1/scene/wjhs/object/123/\`
-
-Sample Response
-^^^^^^^^^^^^^^^
-
-{“num\_records”:1, “objects”:[
-
-{
-
-“key”:”5951dd759af59c00015b1409”,
-
-“name”:”123”,
-
-"region":"US-MD",
-
-“scene”:”DEFGHIJ123463”,
-
-“type”:”Mesh”,
-
-“subtype”:”Cube”,
-
-“owner”:”456”,
-
-“transform”:[1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0],
-
-“assets”: [“Asset\_5”]
-
-}
-
-]}
+.. include:: _examples/object_get.rst
 
 Object Deletion
 ~~~~~~~~~~~~~~~
@@ -108,15 +67,7 @@ When a device needs to remove an object, the Deletion API is available.
 | DELETE   | *<base\_url>*/v1/scene/:scene_name/object/:obj_name |
 +----------+-----------------------------------------------------+
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -X DELETE http://aesel-test/v1/scene/wjhs/object/123/\'
-
-Sample Response
-^^^^^^^^^^^^^^^
-
-No JSON Response, only HTTP Success/Error Code
+.. include:: _examples/object_delete.rst
 
 Object Query
 ~~~~~~~~~~~~
@@ -139,56 +90,7 @@ Parameters
 -  owner (string) – Optional. Return objects owned by a particular
    device
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -X GET
- http://aesel-test/v1/scene/us-md-mc/wjhs/object/?type=Mesh&subtype=Cube\`
-
-Sample Response
-^^^^^^^^^^^^^^^
-
-{“msg\_type”:4, “err\_code”:100, “num\_records”:2, “objects”:[
-
-{
-
-“name”:”Test Object 123465”,
-
-"region":"US-MD",
-
-“scene”:”DEFGHIJ123465”,
-
-“type”:”Mesh”,
-
-“subtype”:”Cube”,
-
-“owner”:”456”,
-
-“transform”:[1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0],
-
-“assets”: [“Asset\_5”]
-
-}, {
-
-“name”:”Test Object 123456”,
-
-"region":"US-MD",
-
-“scene”:”DEFGHIJ123456”,
-
-“type”:”Curve”,
-
-“subtype”:”Sphere”,
-
-“owner”:”456”,
-
-“transform”:[1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0],
-
-“assets”: [“Asset\_5”]
-
-}
-
-]}
+.. include:: _examples/object_query.rst
 
 Object Lock
 ~~~~~~~~~~~
@@ -207,15 +109,7 @@ Parameters
 
 -  owner (string) - Required. The ID of the Device requesting the lock
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -X GET http://aesel-test/v1/scene/wjhs/object/123/lock?owner=abc\'
-
-Sample Response
-^^^^^^^^^^^^^^^
-
-No JSON Response, only HTTP Success/Error Code
+.. include:: _examples/object_lock.rst
 
 Object Unlock
 ~~~~~~~~~~~~~
@@ -234,12 +128,4 @@ Parameters
 
 -  owner (string) - Required. The ID of the Device requesting the lock
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -X DELETE http://aesel-test/v1/scene/wjhs/object/123/lock?owner=abc\'
-
-Sample Response
-^^^^^^^^^^^^^^^
-
-No JSON Response, only HTTP Success/Error Code
+.. include:: _examples/object_unlock.rst

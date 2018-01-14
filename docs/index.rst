@@ -7,6 +7,7 @@
    :caption: Contents:
 
    pages/overview.rst
+   pages/loading.rst
    pages/quickstart.rst
    pages/components.rst
    pages/deployment.rst

@@ -36,9 +36,6 @@ Components
 
 .. include:: components_insert.rst
 
-Section 2: Vocabulary
----------------------
-
 .. include:: vocab.rst
 
 Section 3: Individual Workflows
