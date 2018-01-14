@@ -16,16 +16,7 @@ Post Data
 
 -  Asset File to be stored
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -H “Content-Type: application/json” -X POST -d @filename
-`http://aesel-test/v1/ <http://aesel-test/v1/asset/123/?object_id=abcdef>`__\ `asset/123 <http://aesel-test/v1/asset/123/?object_id=abcdef>`__\ \`
-
-Sample Response
-^^^^^^^^^^^^^^^
-
-No JSON Response, only HTTP Success/Error Code
+.. include:: _examples/asset_create.rst
 
 Asset Retrieve
 ~~~~~~~~~~~~~~
@@ -38,17 +29,7 @@ The retrieval API allows a device to retrieve one asset.
 | GET      | *<base\_url>*/v1/asset/:key/   |
 +----------+--------------------------------+
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -X GET
-`http://aesel-test/v1/ <http://aesel-test/v1/asset/123>`__\ `asset/123 <http://aesel-test/v1/asset/123>`__\ \`
-
-Sample Response
-^^^^^^^^^^^^^^^
-
-No JSON Response, the response data will instead contain the requested
-file (\*.obj, \*.glsl, etc)
+.. include:: _examples/asset_get.rst
 
 Asset Delete
 ~~~~~~~~~~~~
@@ -61,13 +42,4 @@ The delete API allows a device to remove one or more object assets.
 | DELETE   | *<base\_url>*/v1/asset/:key/   |
 +----------+--------------------------------+
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -X DELETE
-`http://aesel-test/v1/ <http://aesel-test/v1/asset/123>`__\ `asset/123 <http://aesel-test/v1/asset/123>`__\ \`
-
-Sample Response
-^^^^^^^^^^^^^^^
-
-No JSON Response, only HTTP Success/Error Code
+.. include:: _examples/asset_delete.rst

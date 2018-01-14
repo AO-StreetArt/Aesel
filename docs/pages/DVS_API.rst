@@ -58,6 +58,15 @@ operations for Objects.
 
 .. include:: Object_API.rst
 
+Object Streaming API
+--------------------
+
+The Streaming API allows for rapid updates to Object Transformations.  These
+updates are streamed out to other devices registered to the scene that contains
+the object.  This allows for live update streams with absolute minimal overhead.
+
+.. include:: Object_Stream_API.rst
+
 Asset API
 ---------
 

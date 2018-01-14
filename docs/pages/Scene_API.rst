@@ -32,16 +32,7 @@ Post Data
 
 }
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -H “Content-Type: application/json” -X POST -d ‘DATA\_STRING’
- http://aesel-test/v1/scene/wjhs/\`
-
-Sample Response
-^^^^^^^^^^^^^^^
-
-{“num\_records”:1,”scenes”:[{“key”:”jklmnop”}]}
+.. include:: _examples/scene_create.rst
 
 Scene Retrieval
 ~~~~~~~~~~~~~~~
@@ -55,33 +46,7 @@ and longitude.
 | GET      | *<base\_url>*/v1/scene/:name           |
 +----------+----------------------------------------+
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -X GET http://aesel-test/v1/scene/wjhs\`
-
-Sample Response
-^^^^^^^^^^^^^^^
-
-{“num\_records”:1,”scenes”:[
-
-{
-
-“key”:”jklmnop”,
-
-"region":"US-MD",
-
-“latitude”:124.0,
-
-“longitude”:122.0,
-
-“asset\_ids”:[“Asset1”],
-
-“tags”:[“Testing2”]
-
-}
-
-]}
+.. include:: _examples/scene_get.rst
 
 Scene Deletion
 ~~~~~~~~~~~~~~
@@ -99,15 +64,7 @@ prior to deletion.
 | DELETE   | *<base\_url>*/v1/scene/:name           |
 +----------+----------------------------------------+
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -X DELETE http://aesel-test/v1/scenes/wjhs\`
-
-Sample Response
-^^^^^^^^^^^^^^^
-
-No JSON Response, only HTTP Success/Error Code
+.. include:: _examples/scene_delete.rst
 
 Scene Query
 ~~~~~~~~~~~
@@ -151,33 +108,4 @@ Post Data
 
 }
 
-Sample Request
-^^^^^^^^^^^^^^
-
-\`$ curl -H “Content-Type: application/json” -X POST -d ‘DATA\_STRING’
- http://aesel-test/v1/scene/data/?latitude=123.01&longitude=125.4&distance=10.0\`
-
-Sample Response
-^^^^^^^^^^^^^^^
-
-{“num\_records”:1,”scenes”:[
-
-{
-
-“key”:”jklmnop”,
-
-”name”:”TestScene10”,
-
-”region”:”US-MD”,
-
-”latitude”:124.0,
-
-”longitude”:122.0,
-
-“tags”:[“test”,”test2”],
-
-“assets”:[“asset1”,”asset2”]
-
-}
-
-]}
+.. include:: _examples/scene_query.rst
