@@ -1,8 +1,7 @@
 **Request**
 
-\`$ curl -H “Content-Type: application/json” -X POST -d @filename
-`http://aesel-test/v1/ <http://aesel-test/v1/asset/123/?object_id=abcdef>`__\ `asset/123 <http://aesel-test/v1/asset/123/?object_id=abcdef>`__\ \`
+\`$ curl -X POST -H "Content-Type: multipart/form-data" -F "file=@testupload.txt" http://localhost:5885/v1/asset`
 
 **Response**
 
-No JSON Response, only HTTP Success/Error Code
+Key of the newly stored asset

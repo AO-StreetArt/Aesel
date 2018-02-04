@@ -1,6 +1,6 @@
 **Request**
 
-\`$ curl -H “Content-Type: application/json” -X POST -d ‘DATA\_STRING’ http://aesel-test/v1/scene/data/?latitude=123.01&longitude=125.4&distance=10.0\`
+\`$ curl -H “Content-Type: application/json” -X POST -d ‘DATA\_STRING’ http://localhost:5885/v1/scene/data/?latitude=123.01&longitude=125.4&distance=10.0\`
 
 **Response**
 

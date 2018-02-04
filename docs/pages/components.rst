@@ -40,18 +40,12 @@ as well as registration operations.  It also acts as the sender for the Outbound
 * `Home Page <https://github.com/AO-StreetArt/CrazyIvan>`__
 * `Documentation <http://crazyivan.readthedocs.io/en/latest/index.html>`__
 
-Ceph
-----
-
-Ceph is an open source competitor to Amazon S3.  It serves to store large files,
-such as Mesh information or Shader information.  In other words, it stores "Assets"
-
-* `Home Page <http://ceph.com/>`__
-
 Mongo
 -----
 
 Mongo serves as the primary data store behind CLyman, storing all Object information.
+
+Mongo GridFS also serves as the default data store for Assets.
 
 * `Home Page <https://docs.mongodb.com/>`__
 

@@ -1,7 +1,7 @@
 **Request**
 
 \`$ curl -H “Content-Type: application/json” -X POST -d ‘DATA\_STRING’
- http://aesel-test/v1/scene/wjhs/object/123/\`
+ http://localhost:5885/v1/scene/wjhs/object/123/\`
 
 **Response**
 

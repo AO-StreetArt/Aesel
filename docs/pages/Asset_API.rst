@@ -1,14 +1,19 @@
-Asset Creation/Update
-~~~~~~~~~~~~~~~~~~~~~
+Asset Creation
+~~~~~~~~~~~~~~
 
-When a device needs to create or update an asset, the Creation/Update
-API is available. When calling the API to create a new Asset, either an
-Object ID or Scene ID must be specified.
+When a device needs to create an asset, the Creation
+API is available.
+
+The file being stored should be sent in the form-data of the body, with multi-part
+form sending supported.
+
+The body of the response will be a string of the key from which the asset can be
+retrieved using the GET request below.
 
 +----------+--------------------------------+
 | Method   | Path                           |
 +----------+--------------------------------+
-| POST     | *<base\_url>*/v1/asset/:key/   |
+| POST     | *<base\_url>*/v1/asset/        |
 +----------+--------------------------------+
 
 Post Data
