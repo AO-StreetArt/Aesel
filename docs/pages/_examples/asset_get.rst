@@ -1,9 +1,7 @@
 **Request**
 
-\`$ curl -X GET
-`http://aesel-test/v1/ <http://aesel-test/v1/asset/123>`__\ `asset/123 <http://aesel-test/v1/asset/123>`__\ \`
+\`$ curl http://localhost:5885/v1/asset/your-asset-key`
 
 **Response**
 
-No JSON Response, the response data will instead contain the requested
-file (\*.obj, \*.glsl, etc)
+The response data will contain the requested file (\*.obj, \*.glsl, etc)

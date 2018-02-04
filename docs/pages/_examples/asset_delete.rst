@@ -1,7 +1,6 @@
 **Request**
 
-\`$ curl -X DELETE
-`http://aesel-test/v1/ <http://aesel-test/v1/asset/123>`__\ `asset/123 <http://aesel-test/v1/asset/123>`__\ \`
+\`$ curl -X DELETE http://localhost:5885/v1/asset/your-asset-key`
 
 **Response**
 
