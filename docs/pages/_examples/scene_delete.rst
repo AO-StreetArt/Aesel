@@ -1,6 +1,6 @@
 **Request**
 
-\`$ curl -X DELETE http://aesel-test/v1/scenes/wjhs\`
+\`$ curl -X DELETE http://localhost:5885/v1/scenes/wjhs\`
 
 **Response**
 

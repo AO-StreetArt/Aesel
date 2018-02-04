@@ -1,6 +1,6 @@
 **Request**
 
-\`$ curl -X PUT http://aesel-test/v1/scene/wjhs/registration?device_id=abcdef123&hostname=test&port=123\`
+\`$ curl -X PUT http://localhost:5885/v1/scene/wjhs/registration?device_id=abcdef123&hostname=test&port=123\`
 
 **Response**
 

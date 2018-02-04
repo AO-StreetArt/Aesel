@@ -1,6 +1,6 @@
 **Request**
 
-\`$ curl -X GET http://aesel-test/v1/scene/wjhs/object/123/\`
+\`$ curl -X GET http://localhost:5885/v1/scene/wjhs/object/123/\`
 
 **Response**
 

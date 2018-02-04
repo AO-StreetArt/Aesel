@@ -1,6 +1,6 @@
 **Request**
 
-\`$ curl -X DELETE http://aesel-test/v1/scene/wjhs/registration?device_id=abcdef123\`
+\`$ curl -X DELETE http://localhost:5885/v1/scene/wjhs/registration?device_id=abcdef123\`
 
 **Response**
 
