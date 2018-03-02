@@ -16,8 +16,8 @@ Parameters
 
 -  device\_id (string) – Required. Unique identifier for the device
    registering to the scene
--  hostname (string) - Required.  Hostname of the device for UDP Communications
--  port (integer) - Required.  Port of the device for UDP Communications
+-  device\_host (string) - Required.  Hostname of the device for UDP Communications
+-  device\_port (integer) - Required.  Port of the device for UDP Communications
 
 Put Data
 ^^^^^^^^
