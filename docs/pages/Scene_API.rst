@@ -26,7 +26,7 @@ Post Data
 
 "longitude":122.0,
 
-"assets":["TestAsset10"],
+"asset_ids":["TestAsset10"],
 
 "tags":["Testing2"]
 
@@ -102,7 +102,7 @@ Post Data
 
 "region":"TestRegion5",
 
-"assets":["TestAsset10"],
+"asset_ids":["TestAsset10"],
 
 "tags":["Testing2"]
 

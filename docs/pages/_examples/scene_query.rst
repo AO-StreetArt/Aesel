@@ -20,7 +20,7 @@
 
 "tags":["test","test2"],
 
-"assets":["asset1","asset2"]
+"asset_ids":["asset1","asset2"]
 
 }
 
