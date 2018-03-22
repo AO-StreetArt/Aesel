@@ -11,8 +11,6 @@
 
 "name":"Test Object 123465",
 
-"region":"US-MD",
-
 "scene":"DEFGHIJ123465",
 
 "type":"Mesh",
@@ -28,8 +26,6 @@
 }, {
 
 "name":"Test Object 123456",
-
-"region":"US-MD",
 
 "scene":"DEFGHIJ123456",
 

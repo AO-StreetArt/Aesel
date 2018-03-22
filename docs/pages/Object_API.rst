@@ -22,8 +22,6 @@ Post Data
 
 "name": "Test Object 123464",
 
-"region": "US-MD",
-
 "type": "Curve",
 
 "subtype": "Sphere",

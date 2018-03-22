@@ -12,8 +12,6 @@
 
 "name":"123",
 
-"region":"US-MD",
-
 "scene":"DEFGHIJ123463",
 
 "type":"Mesh",
