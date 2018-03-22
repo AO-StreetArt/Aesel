@@ -4,8 +4,6 @@
 
 **Response**
 
-{"num\_records":1,"scenes":[
-
 {
 
 "key":"jklmnop",
@@ -21,5 +19,3 @@
 "tags":["Testing2"]
 
 }
-
-]}
