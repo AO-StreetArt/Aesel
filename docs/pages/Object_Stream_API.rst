@@ -24,11 +24,11 @@ Post Data
 
 {
 
-“translation”: [0, 0, 1],
+"translation": [0, 0, 1],
 
-“rotation\_euler”: [0, 1, 0, 0],
+"rotation\_euler": [0, 1, 0, 0],
 
-“scale”: [1, 1, 2]
+"scale": [1, 1, 2]
 
 }
 

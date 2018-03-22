@@ -5,43 +5,43 @@
 
 **Response**
 
-{“msg\_type”:4, “err\_code”:100, “num\_records”:2, “objects”:[
+{"msg\_type":4, "err\_code":100, "num\_records":2, "objects":[
 
 {
 
-“name”:”Test Object 123465”,
+"name":"Test Object 123465",
 
 "region":"US-MD",
 
-“scene”:”DEFGHIJ123465”,
+"scene":"DEFGHIJ123465",
 
-“type”:”Mesh”,
+"type":"Mesh",
 
-“subtype”:”Cube”,
+"subtype":"Cube",
 
-“owner”:”456”,
+"owner":"456",
 
-“transform”:[1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0],
+"transform":[1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0],
 
-“assets”: [“Asset\_5”]
+"assets": ["Asset\_5"]
 
 }, {
 
-“name”:”Test Object 123456”,
+"name":"Test Object 123456",
 
 "region":"US-MD",
 
-“scene”:”DEFGHIJ123456”,
+"scene":"DEFGHIJ123456",
 
-“type”:”Curve”,
+"type":"Curve",
 
-“subtype”:”Sphere”,
+"subtype":"Sphere",
 
-“owner”:”456”,
+"owner":"456",
 
-“transform”:[1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0],
+"transform":[1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0],
 
-“assets”: [“Asset\_5”]
+"assets": ["Asset\_5"]
 
 }
 

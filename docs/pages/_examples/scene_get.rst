@@ -4,21 +4,21 @@
 
 **Response**
 
-{“num\_records”:1,”scenes”:[
+{"num\_records":1,"scenes":[
 
 {
 
-“key”:”jklmnop”,
+"key":"jklmnop",
 
 "region":"US-MD",
 
-“latitude”:124.0,
+"latitude":124.0,
 
-“longitude”:122.0,
+"longitude":122.0,
 
-“asset\_ids”:[“Asset1”],
+"asset\_ids":["Asset1"],
 
-“tags”:[“Testing2”]
+"tags":["Testing2"]
 
 }
 

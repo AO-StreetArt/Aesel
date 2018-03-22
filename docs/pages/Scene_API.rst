@@ -22,13 +22,13 @@ Post Data
 
 "region":"US-MD",
 
-“latitude”:124.0,
+"latitude":124.0,
 
-“longitude”:122.0,
+"longitude":122.0,
 
-“assets”:[“TestAsset10”],
+"assets":["TestAsset10"],
 
-“tags”:[“Testing2”]
+"tags":["Testing2"]
 
 }
 
@@ -92,19 +92,19 @@ Post Data
 
 {
 
-“name”:”Test Scene 10”,
+"name":"Test Scene 10",
 
-“latitude”:124.0,
+"latitude":124.0,
 
-“longitude”:122.0,
+"longitude":122.0,
 
-“distance”:100.0,
+"distance":100.0,
 
-“region”:”TestRegion5”,
+"region":"TestRegion5",
 
-“assets”:[“TestAsset10”],
+"assets":["TestAsset10"],
 
-“tags”:[“Testing2”]
+"tags":["Testing2"]
 
 }
 

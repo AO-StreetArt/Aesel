@@ -20,23 +20,23 @@ Post Data
 
 {
 
-“name”: “Test Object 123464”,
+"name": "Test Object 123464",
 
 "region": "US-MD",
 
-“type”: “Curve”,
+"type": "Curve",
 
-“subtype”: “Sphere”,
+"subtype": "Sphere",
 
-“owner”: “456”,
+"owner": "456",
 
-“translation”: [0, 0, 1],
+"translation": [0, 0, 1],
 
-“rotation\_euler”: [0, 1, 0, 0],
+"rotation\_euler": [0, 1, 0, 0],
 
-“scale”: [1, 1, 2],
+"scale": [1, 1, 2],
 
-“assets”: [“Asset\_5”]
+"assets": ["Asset\_5"]
 
 }
 

@@ -6,23 +6,23 @@
 
  {
 
- “num\_records”:1, “scenes”:[
+ "num\_records":1, "scenes":[
 
  {
 
- “key”:”jklmnop”,
+ "key":"jklmnop",
 
- “devices”:[
+ "devices":[
 
  {
 
- “key”:”Ud\_132”,
+ "key":"Ud\_132",
 
- “transform”:{
+ "transform":{
 
- “translation”:[0.0,0.0,0.0],
+ "translation":[0.0,0.0,0.0],
 
- ”rotation”:[0.0,0.0,0.0]
+ "rotation":[0.0,0.0,0.0]
 
  }
 
