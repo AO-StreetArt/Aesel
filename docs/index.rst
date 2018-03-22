@@ -13,4 +13,5 @@
    pages/deployment.rst
    pages/functional_design.rst
    pages/udp_streaming.rst
+   pages/zero_latency.rst
    pages/DVS_API.rst
