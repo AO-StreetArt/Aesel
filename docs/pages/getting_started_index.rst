@@ -1,16 +1,19 @@
-.. _index:
+Getting Started
+===============
+
+.. _getting_started_index:
 
 .. image:: _images/Aesel_Logo_Alpha.png
    :alt: AO Labs
    :align: center
    :target: https://aostreetart.com/aolabs/aesel/
 
-.. include:: ../README.rst
-
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
-   pages/getting_started_index.rst
-   pages/DVS_API.rst
-   pages/design_index.rst
+   quickstart.rst
+   overview.rst
+   loading.rst
+   components.rst
+   deployment.rst

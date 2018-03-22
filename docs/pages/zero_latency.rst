@@ -1,5 +1,5 @@
 Aesel Zero Latency Streaming Design
-=================================
+===================================
 
 Section 1: Abstract
 -------------------
@@ -18,7 +18,7 @@ the performance requirements.  We need to support a cloud-native, zero-latency
 solution.
 
 Section 2: Components
-~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: components_insert.rst
 
