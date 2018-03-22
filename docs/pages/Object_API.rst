@@ -84,7 +84,6 @@ the object name available, the Query API is available.
 Parameters
 ^^^^^^^^^^
 
--  scene (string) - Optional. The scene of the object to query for
 -  type (string) – Optional. The type of object to retrieve
 -  subtype (string) – Optional. The subtype of object to retrieve
 -  owner (string) – Optional. Return objects owned by a particular

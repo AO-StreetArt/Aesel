@@ -1,7 +1,7 @@
 **Request**
 
 \`$ curl -X GET
- http://localhost:5885/v1/scene/us-md-mc/wjhs/object/?type=Mesh&subtype=Cube\`
+ http://localhost:5885/v1/scene/wjhs/object/?type=Mesh&subtype=Cube\`
 
 **Response**
 
