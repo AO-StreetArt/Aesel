@@ -4,7 +4,7 @@
 
 **Response**
 
-{
+[{
     "id": "5ab878ca98afd7729e928dd5",
     "scene": "testScene",
     "object": "testObject",
@@ -13,4 +13,4 @@
         "5ab878c998afd7729e928dd3",
         "5ab878b098afd7729e928dd1"
     ]
-}
+}]
