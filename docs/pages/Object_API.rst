@@ -28,6 +28,8 @@ Post Data
 
 "owner": "456",
 
+"timestamp": 123456789,
+
 "translation": [0, 0, 1],
 
 "quaternion\_rotation": [0, 1, 0, 0],
@@ -41,6 +43,11 @@ Post Data
 }
 
 .. include:: _examples/object_create.rst
+
+Parameters
+^^^^^^^^^^
+
+-  frame (integer) – Optional. The object frame to retrieve.  0 By default.
 
 Object Retrieval
 ~~~~~~~~~~~~~~~~
@@ -56,6 +63,11 @@ is available.
 
 .. include:: _examples/object_get.rst
 
+Parameters
+^^^^^^^^^^
+
+-  frame (integer) – Optional. The object frame to retrieve.  0 By default.
+
 Object Deletion
 ~~~~~~~~~~~~~~~
 
@@ -68,6 +80,11 @@ When a device needs to remove an object, the Deletion API is available.
 +----------+-----------------------------------------------------+
 
 .. include:: _examples/object_delete.rst
+
+Parameters
+^^^^^^^^^^
+
+-  frame (integer) – Optional. The object frame to retrieve, by default deletes all frames.
 
 Object Query
 ~~~~~~~~~~~~
@@ -88,6 +105,7 @@ Parameters
 -  subtype (string) – Optional. The subtype of object to retrieve
 -  owner (string) – Optional. Return objects owned by a particular
    device
+-  frame (integer) – Optional. The object frame to retrieve.  0 By default.
 
 .. include:: _examples/object_query.rst
 
