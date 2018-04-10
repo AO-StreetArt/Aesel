@@ -1,27 +1,15 @@
-**Request**
+..  http:example:: curl wget httpie python-requests
+    :response: scene_query_response.rst
 
-\`$ curl -H "Content-Type: application/json" -X POST -d ‘DATA\_STRING’ http://localhost:5885/v1/scene/data/?latitude=123.01&longitude=125.4&distance=10.0\`
+    POST /v1/scene/data HTTP/1.1
+    Host: localhost:5885
+    Content-Type: application/json
 
-**Response**
-
-{"num\_records":1,"scenes":[
-
-{
-
-"key":"jklmnop",
-
-"name":"TestScene10",
-
-"region":"US-MD",
-
-"latitude":124.0,
-
-"longitude":122.0,
-
-"tags":["test","test2"],
-
-"asset_ids":["asset1","asset2"]
-
-}
-
-]}
+    {
+      "name":"test",
+      "region":"US-MD",
+      "latitude":"124.0",
+      "longitude":"122.0",
+      "assets":["TestAsset10"],
+      "tags":["Testing2"]
+    }

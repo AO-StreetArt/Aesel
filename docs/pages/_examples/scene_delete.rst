@@ -1,7 +1,4 @@
-**Request**
+..  http:example:: curl wget httpie python-requests
 
-\`$ curl -X DELETE http://localhost:5885/v1/scenes/wjhs\`
-
-**Response**
-
-No JSON Response, only HTTP Success/Error Code
+    DELETE /v1/scene/name HTTP/1.1
+    Host: localhost:5885

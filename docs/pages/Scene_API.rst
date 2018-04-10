@@ -8,8 +8,9 @@ Scene Creation/Update
    :<json string region: The region of the scene
    :<json float latitude: The latitude associated to the scene
    :<json float longitude: The longitude associated to the scene
-   :<json list(string) assets: A list of string Asset ID's that should be downloaded on registration
-   :<json list(string) tags: A list of string tags that can be used to search for scenes
+   :<json array(string) assets: A list of string Asset ID's that should be downloaded on registration
+   :<json array(string) tags: A list of string tags that can be used to search for scenes
+   :>json string key: The key of the scene, for use in Object Change Streams
    :reqheader Content-Type: Application/json
    :statuscode 200: Success
 
@@ -26,8 +27,8 @@ Scene Retrieval
    :>json string region: The region of the scene
    :>json float latitude: The latitude associated to the scene
    :>json float longitude: The longitude associated to the scene
-   :>json list(string) assets: A list of string Asset ID's that should be downloaded on registration
-   :>json list(string) tags: A list of string tags that can be used to search for scenes
+   :>json array(string) assets: A list of string Asset ID's that should be downloaded on registration
+   :>json array(string) tags: A list of string tags that can be used to search for scenes
    :statuscode 200: Success
 
 .. include:: _examples/scene_get.rst
@@ -35,61 +36,47 @@ Scene Retrieval
 Scene Deletion
 ~~~~~~~~~~~~~~
 
-Delete a scene.
+.. http:delete:: /v1/scene/(name)
 
-CAUTION: This will delete all information associated to a scene,
-including all objects in the scene, and any registrations to devices.
-Any object which needs to be retained should be moved to another scene
-prior to deletion.
+   Delete a scene.
 
-+----------+----------------------------------------+
-| Method   | Path                                   |
-+----------+----------------------------------------+
-| DELETE   | *<base\_url>*/v1/scene/:name           |
-+----------+----------------------------------------+
+   CAUTION: This will delete all information associated to a scene,
+   including all objects in the scene, and any registrations to devices.
+   Any object which needs to be retained should be moved to another scene
+   prior to deletion.
+
+   :statuscode 200: Success
 
 .. include:: _examples/scene_delete.rst
 
 Scene Query
 ~~~~~~~~~~~
 
-Devices can find scenes by any attribute, including name and distance.
-If a distance is not supplied, then the closest scenes matching the
-query will be returned.
+.. http:post:: /v1/scene/data
 
-+----------+-------------------------------+
-| Method   | Path                          |
-+----------+-------------------------------+
-| POST     | *<base\_url>*/v1/scene/data   |
-+----------+-------------------------------+
+   Devices can find scenes by any attribute, including distance.
 
-Post Data
-^^^^^^^^^
-
--  JSON Format
--  Allows you to query by name, region, tag, asset ID, or distance from
-   a particular lat/long point.
--  The fields ‘latitude’, ‘longitude’, and ‘distance’ should always
+   The fields ‘latitude’, ‘longitude’, and ‘distance’ should always
    appear together if present. The distance provided is taken in
    kilometers.
--  Example:
 
-{
-
-"name":"Test Scene 10",
-
-"latitude":124.0,
-
-"longitude":122.0,
-
-"distance":100.0,
-
-"region":"TestRegion5",
-
-"asset_ids":["TestAsset10"],
-
-"tags":["Testing2"]
-
-}
+   :<json string name: The name of the scene
+   :<json string region: The region of the scene
+   :<json float latitude: The latitude associated to the scene
+   :<json float distance: The latitude associated to the scene
+   :<json float longitude: The longitude associated to the scene
+   :<json list(string) assets: A list of string Asset ID's that should be downloaded on registration
+   :<json list(string) tags: A list of string tags that can be used to search for scenes
+   :>json int num\_records: The number of scenes returned in the response
+   :>json array scenes: A List of Scene objects which match the query
+   :>jsonarr string key: The key of the scene, for use in Object Change Streams
+   :>jsonarr string name: The name of the scene
+   :>jsonarr string region: The region of the scene
+   :>jsonarr float latitude: The latitude associated to the scene
+   :>jsonarr float longitude: The longitude associated to the scene
+   :>jsonarr array(string) assets: A list of string Asset ID's that should be downloaded on registration
+   :>jsonarr array(string) tags: A list of string tags that can be used to search for scenes
+   :reqheader Content-Type: Application/json
+   :statuscode 200: Success
 
 .. include:: _examples/scene_query.rst
