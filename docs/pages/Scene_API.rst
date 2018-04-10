@@ -1,50 +1,34 @@
 Scene Creation/Update
 ~~~~~~~~~~~~~~~~~~~~~
 
-When a device needs to create or update a new scene without registering
-to it, this API is available.
+.. http:post:: /v1/scene/(name)
 
-+----------+----------------------------------------+
-| Method   | Path                                   |
-+----------+----------------------------------------+
-| POST     | *<base\_url>*/v1/scene/:name           |
-+----------+----------------------------------------+
+   Create a new scene or update an existing one with name `name`.
 
-Post Data
-^^^^^^^^^
-
--  JSON Format
--  Includes lat/long information, tags, and a list of Asset IDs to
-   associate to the Scene
--  Example:
-
-{
-
-"region":"US-MD",
-
-"latitude":124.0,
-
-"longitude":122.0,
-
-"asset_ids":["TestAsset10"],
-
-"tags":["Testing2"]
-
-}
+   :<json string region: The region of the scene
+   :<json float latitude: The latitude associated to the scene
+   :<json float longitude: The longitude associated to the scene
+   :<json list(string) assets: A list of string Asset ID's that should be downloaded on registration
+   :<json list(string) tags: A list of string tags that can be used to search for scenes
+   :reqheader Content-Type: Application/json
+   :statuscode 200: Success
 
 .. include:: _examples/scene_create.rst
 
 Scene Retrieval
 ~~~~~~~~~~~~~~~
 
-Retrieve scene information. This includes region, name, tags, latitude,
-and longitude.
+.. http:get:: /v1/scene/(name)
 
-+----------+----------------------------------------+
-| Method   | Path                                   |
-+----------+----------------------------------------+
-| GET      | *<base\_url>*/v1/scene/:name           |
-+----------+----------------------------------------+
+   Retrieve scene information for scene `name`. This includes key, region, tags, latitude, and longitude.
+
+   :>json string key: The key of the scene, for use in Object Change Streams
+   :>json string region: The region of the scene
+   :>json float latitude: The latitude associated to the scene
+   :>json float longitude: The longitude associated to the scene
+   :>json list(string) assets: A list of string Asset ID's that should be downloaded on registration
+   :>json list(string) tags: A list of string tags that can be used to search for scenes
+   :statuscode 200: Success
 
 .. include:: _examples/scene_get.rst
 

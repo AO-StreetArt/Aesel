@@ -30,7 +30,7 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = ['sphinxcontrib.httpdomain', 'sphinxcontrib.httpexample']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -75,6 +75,24 @@ pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
+
+
+# -- Options for HTTP Domain and HTTP Example -----------------------------
+
+# List of HTTP header prefixes which should be ignored in strict mode
+http_headers_ignore_prefixes = []
+
+# Strips the leading segments from the endpoint paths by given list of prefixes:
+http_index_ignore_prefixes = []
+
+# Short name of the index which will appear on every page:
+http_index_shortname = 'api'
+
+# Full index name which is used on index page:
+http_index_localname = "Aesel HTTP API"
+
+# When True (default) emits build errors when status codes, methods and headers look non-standard:
+http_strict_mode = True
 
 
 # -- Options for HTML output ----------------------------------------------
