@@ -1,148 +1,105 @@
+Object API
+==========
+
+An Object is represented by a transformation matrix representing it’s
+position in 3-space, as well as a collection of Assets (Mesh files,
+Texture files, Shader scripts, etc.). Objects are meant to be interacted
+with by individual devices, and these changes will be streamed to either
+devices via the forthcoming UDP API. This API exposes CRUD and Query
+operations for Objects.
+
 Object Creation/Update
 ~~~~~~~~~~~~~~~~~~~~~~
 
-When a device needs to create or update an object, the Creation/Update
-API is available.
+.. http:post:: /v1/scene/(scene_name)/object/(object_name)
 
-+----------+-----------------------------------------------------+
-| Method   | Path                                                |
-+----------+-----------------------------------------------------+
-| POST     | *<base\_url>*/v1/scene/:scene_name/object/:obj_name |
-+----------+-----------------------------------------------------+
+   Create a new object or update an existing one with name `obj_name` in scene `scene_name`.
 
-Post Data
-^^^^^^^^^
+   :query int frame:  Optional. The frame to save the object to.  Set to 0 by default.
+   :<json string type: The type of the object
+   :<json string subtype: The region of the object
+   :<json string owner: The owner of current lock on the object
+   :<json int timestamp: The timestamp for the update (in milliseconds since the Unix Epoch)
+   :<json array(float) translation: The Translation of the object relative to the scene coordinate system
+   :<json array(float) rotation\_quaternion: The Quaternion Rotation of the object relative to the scene coordinate system
+   :<json array(float) rotation\_euler: The Euler Rotation of the object relative to the scene coordinate system
+   :<json array(float) scale: The Scale of the object relative to the scene coordinate system
+   :<json array(string) assets: A list of string Asset ID's that should be downloaded on registration
+   :>json int num\_records: The number of scenes returned in the response
+   :>json array objects: A List of Scene objects which match the query
+   :>jsonarr string key: The key of the scene, for use in Object Change Streams
+   :reqheader Content-Type: Application/json
+   :statuscode 200: Success
 
--  JSON Format
--  Includes both a transformation matrix and a list of assets registered
-   to the object,
--  Example:
-
-{
-
-"name": "Test Object 123464",
-
-"type": "Curve",
-
-"subtype": "Sphere",
-
-"owner": "456",
-
-"timestamp": 123456789,
-
-"translation": [0, 0, 1],
-
-"quaternion\_rotation": [0, 1, 0, 0],
-
-"euler\_rotation": [0, 0, 0],
-
-"scale": [1, 1, 2],
-
-"assets": ["Asset\_5"]
-
-}
-
-.. include:: _examples/object_create.rst
-
-Parameters
-^^^^^^^^^^
-
--  frame (integer) – Optional. The object frame to retrieve.  0 By default.
+.. include:: _examples/object/object_create.rst
 
 Object Retrieval
 ~~~~~~~~~~~~~~~~
 
-When a device needs to get the details of an object, the Retrieval API
-is available.
+.. http:get:: /v1/scene/(scene_name)/object/(object_name)
 
-+----------+-----------------------------------------------------+
-| Method   | Path                                                |
-+----------+-----------------------------------------------------+
-| GET      | *<base\_url>*/v1/scene/:scene_name/object/:obj_name |
-+----------+-----------------------------------------------------+
+   Create a new object or update an existing one with name `obj_name` in scene `scene_name`.
 
-.. include:: _examples/object_get.rst
+   :query int frame:  Optional. The frame to retrieve for the object.  Set to 0 by default.
+   :>json string type: The type of the object
+   :>json string subtype: The region of the object
+   :>json string owner: The owner of current lock on the object
+   :>json int timestamp: The timestamp for the update (in milliseconds since the Unix Epoch)
+   :>json array(float) translation: The Translation of the object relative to the scene coordinate system
+   :>json array(float) rotation\_quaternion: The Quaternion Rotation of the object relative to the scene coordinate system
+   :>json array(float) rotation\_euler: The Euler Rotation of the object relative to the scene coordinate system
+   :>json array(float) scale: The Scale of the object relative to the scene coordinate system
+   :>json array(string) assets: A list of string Asset ID's that should be downloaded on registration
+   :statuscode 200: Success
 
-Parameters
-^^^^^^^^^^
-
--  frame (integer) – Optional. The object frame to retrieve.  0 By default.
+.. include:: _examples/object/object_get.rst
 
 Object Deletion
 ~~~~~~~~~~~~~~~
 
-When a device needs to remove an object, the Deletion API is available.
+.. http:delete:: /v1/scene/(scene_name)/object/(object_name)
 
-+----------+-----------------------------------------------------+
-| Method   | Path                                                |
-+----------+-----------------------------------------------------+
-| DELETE   | *<base\_url>*/v1/scene/:scene_name/object/:obj_name |
-+----------+-----------------------------------------------------+
+   Delete an object.
 
-.. include:: _examples/object_delete.rst
+   :query int frame:  Optional. The frame to delete for the object.  Set to 0 by default.
+   :statuscode 200: Success
 
-Parameters
-^^^^^^^^^^
-
--  frame (integer) – Optional. The object frame to retrieve, by default deletes all frames.
+.. include:: _examples/object/object_delete.rst
 
 Object Query
 ~~~~~~~~~~~~
 
-When a device needs to get the details of an object, but does not have
-the object name available, the Query API is available.
+.. http:get:: /v1/scene/(scene_name)/object
 
-+----------+------------------------------------------------+
-| Method   | Path                                           |
-+----------+------------------------------------------------+
-| GET      | *<base\_url>*/v1/scene/:scene_name/object/     |
-+----------+------------------------------------------------+
+   Query for objects in scene `scene_name`.
 
-Parameters
-^^^^^^^^^^
+   :query int frame:  Optional. The frame to retrieve for the object.  Set to 0 by default.
+   :query string type: The type of the object
+   :query string subtype: The region of the object
+   :query string owner: The owner of current lock on the object
 
--  type (string) – Optional. The type of object to retrieve
--  subtype (string) – Optional. The subtype of object to retrieve
--  owner (string) – Optional. Return objects owned by a particular
-   device
--  frame (integer) – Optional. The object frame to retrieve.  0 By default.
-
-.. include:: _examples/object_query.rst
+.. include:: _examples/object/object_query.rst
 
 Object Lock
 ~~~~~~~~~~~
 
-A locked object can only be updated by the lock owner, until the lock is released.
-Use this method to obtain the lock on the object
+.. http:get:: /v1/scene/(scene_name)/object/lock
 
-+----------+----------------------------------------------------------+
-| Method   | Path                                                     |
-+----------+----------------------------------------------------------+
-| GET      | *<base\_url>*/v1/scene/:scene_name/object/:obj_name/lock |
-+----------+----------------------------------------------------------+
+   A locked object can only be updated by the lock owner, until the lock is released.
+   Use this method to obtain the lock on the object
 
-Parameters
-^^^^^^^^^^
+   :query string owner: Required. The ID of the Device requesting the lock.
 
--  owner (string) - Required. The ID of the Device requesting the lock
-
-.. include:: _examples/object_lock.rst
+.. include:: _examples/object/object_lock.rst
 
 Object Unlock
 ~~~~~~~~~~~~~
 
-A locked object can only be updated by the lock owner, until the lock is released.
-Use this method to release the lock on the object
+.. http:delete:: /v1/scene/(scene_name)/object/lock
 
-+----------+----------------------------------------------------------+
-| Method   | Path                                                     |
-+----------+----------------------------------------------------------+
-| DELETE   | *<base\_url>*/v1/scene/:scene_name/object/:obj_name/lock |
-+----------+----------------------------------------------------------+
+   A locked object can only be updated by the lock owner, until the lock is released.
+   Use this method to release the lock on the object
 
-Parameters
-^^^^^^^^^^
+   :query string owner: Required. The ID of the Device requesting the lock.
 
--  owner (string) - Required. The ID of the Device requesting the lock
-
-.. include:: _examples/object_unlock.rst
+.. include:: _examples/object/object_unlock.rst

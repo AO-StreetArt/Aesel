@@ -1,0 +1,19 @@
+..  http:example:: curl wget httpie python-requests
+    :response: object_create_response.rst
+
+    POST /v1/scene/testScene/object/testObject HTTP/1.1
+    Host: localhost:5885
+    Content-Type: application/json
+
+    {
+    "name": "Test Object 123464",
+    "type": "Curve",
+    "subtype": "Sphere",
+    "owner": "456",
+    "timestamp": 123456789,
+    "translation": [0, 0, 1],
+    "quaternion_rotation": [0, 1, 0, 0],
+    "euler_rotation": [0, 0, 0],
+    "scale": [1, 1, 2],
+    "assets": ["Asset_5"]
+    }

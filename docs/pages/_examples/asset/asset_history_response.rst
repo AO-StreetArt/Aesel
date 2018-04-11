@@ -1,8 +1,6 @@
-**Request**
-
-\`$ curl http://localhost:5885/v1/asset-history/asset-key`
-
-**Response**
+HTTP/1.1 200 OK
+Location: http://localhost:5885/v1/asset-history/abcdef
+Content-Type: application/json
 
 [{
     "id": "5ab878ca98afd7729e928dd5",

@@ -23,7 +23,7 @@ AR-compatible devices.  We'll call these friends Joe and Laura.  Our first step 
 
    For example:
 
-   .. include:: _examples/scene_query.rst
+   .. include:: _examples/scene/scene_query.rst
 
 After some thinking, you decide that Laura's party sounds like more fun.  As you enter her party, your device sends
 a registration message to Aesel.  Aesel responds by informing you about all of the objects in the scene, as well as
@@ -35,7 +35,7 @@ scene as a whole.  You download all of the data you need to actually visualize t
 .. note::
    This exchange of information is initiated by a Scene Registration message:
 
-   .. include:: _examples/scene_register.rst
+   .. include:: _examples/scene/scene_register.rst
 
    After Registration, there may be a great deal of communication between the user's device and the Aesel server.  Rather than
    dumping all of the necessary information directly to the device, Aesel simply responds to a registration with the keys to
@@ -51,7 +51,7 @@ object to device-device communication), but once the right adjustments are made 
 .. note::
    The message to Aesel takes the form of a Scene Synchronization Message:
 
-   .. include:: _examples/scene_sync.rst
+   .. include:: _examples/scene/scene_sync.rst
 
    We need to perform this step to determine the difference between the default coordinate system of your device, and the
    coordinate system of the :ref:`Scene <vocab>`.  This is the coordinate system that all of the objects are stored in,
@@ -67,7 +67,7 @@ sent to Aesel and, from there, to everyone else at the party.
 .. note::
    Here we utilize the Object Streaming API to move the object around:
 
-   .. include:: _examples/object_hsupdate.rst
+   .. include:: _examples/object/object_hsupdate.rst
 
    Aesel provides live change feeds of :ref:`Object <vocab>` location, rotation, and scaling for any users registered to the :ref:`Scene <vocab>`
    containing that :ref:`Object <vocab>`.  These feeds are designed to be extremely high-speed, and are sent via UDP.
@@ -92,7 +92,7 @@ the field.
 .. note::
    This message to Aesel comes as a De-Registration Message:
 
-   .. include:: _examples/scene_deregister.rst
+   .. include:: _examples/scene/scene_deregister.rst
 
    Notice that you only de-register after performing any corrections you need, and once you are synchronized
    we can leave the original scene.  Also note that you do not necessarily need to leave the original scene.

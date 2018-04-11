@@ -1,3 +1,9 @@
+Scene API
+=========
+
+A Scene is a group of Objects associated to a particular Latitude and
+Longitude. This API exposes CRUD and Query operations for Scenes.
+
 Scene Creation/Update
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -10,11 +16,13 @@ Scene Creation/Update
    :<json float longitude: The longitude associated to the scene
    :<json array(string) assets: A list of string Asset ID's that should be downloaded on registration
    :<json array(string) tags: A list of string tags that can be used to search for scenes
-   :>json string key: The key of the scene, for use in Object Change Streams
+   :>json int num\_records: The number of scenes returned in the response
+   :>json array scenes: A List of Scene objects which match the query
+   :>jsonarr string key: The key of the scene, for use in Object Change Streams
    :reqheader Content-Type: Application/json
    :statuscode 200: Success
 
-.. include:: _examples/scene_create.rst
+.. include:: _examples/scene/scene_create.rst
 
 Scene Retrieval
 ~~~~~~~~~~~~~~~
@@ -31,7 +39,7 @@ Scene Retrieval
    :>json array(string) tags: A list of string tags that can be used to search for scenes
    :statuscode 200: Success
 
-.. include:: _examples/scene_get.rst
+.. include:: _examples/scene/scene_get.rst
 
 Scene Deletion
 ~~~~~~~~~~~~~~
@@ -47,7 +55,7 @@ Scene Deletion
 
    :statuscode 200: Success
 
-.. include:: _examples/scene_delete.rst
+.. include:: _examples/scene/scene_delete.rst
 
 Scene Query
 ~~~~~~~~~~~
@@ -79,4 +87,4 @@ Scene Query
    :reqheader Content-Type: Application/json
    :statuscode 200: Success
 
-.. include:: _examples/scene_query.rst
+.. include:: _examples/scene/scene_query.rst

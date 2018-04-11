@@ -1,15 +1,14 @@
 ..  http:example:: curl wget httpie python-requests
-    :response: scene_query_response.rst
+    :response: scene_create_response.rst
 
-    POST /v1/scene/data HTTP/1.1
+    POST /v1/scene/name HTTP/1.1
     Host: localhost:5885
     Content-Type: application/json
 
     {
-      "name":"test",
       "region":"US-MD",
-      "latitude":"124.0",
-      "longitude":"122.0",
+      "latitude":124,
+      "longitude":122,
       "assets":["TestAsset10"],
       "tags":["Testing2"]
     }

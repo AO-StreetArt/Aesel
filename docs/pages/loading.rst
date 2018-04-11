@@ -31,13 +31,13 @@ Loading a Scene can be done either with a Scene Retreival:
 
 .. admonition:: Example
 
-   .. include:: _examples/scene_get.rst
+   .. include:: _examples/scene/scene_get.rst
 
 or, we can find Scenes with a Scene Query:
 
 .. admonition:: Example
 
-   .. include:: _examples/scene_query.rst
+   .. include:: _examples/scene/scene_query.rst
 
 Loading Scene Assets
 ~~~~~~~~~~~~~~~~~~~~
@@ -46,7 +46,7 @@ Now that we have our scene, we issue an Asset Retrieval Message for each key lis
 
 .. admonition:: Example
 
-   .. include:: _examples/asset_get.rst
+   .. include:: _examples/asset/asset_get.rst
 
 Loading Scene Objects
 ~~~~~~~~~~~~~~~~~~~~~
@@ -56,7 +56,7 @@ left out of the request, than all Objects in the scene will be returned:
 
 .. admonition:: Example
 
-   .. include:: _examples/object_query.rst
+   .. include:: _examples/object/object_query.rst
 
 Loading Object Assets
 ~~~~~~~~~~~~~~~~~~~~~
@@ -66,4 +66,4 @@ only using the keys listed in the 'assets' field from the Object:
 
 .. admonition:: Example
 
-   .. include:: _examples/asset_get.rst
+   .. include:: _examples/asset/asset_get.rst
