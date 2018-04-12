@@ -1,0 +1,72 @@
+version: '2.1'
+
+services:
+  registry:
+    image: consul
+    container_name: registry
+    ports:
+      - "8500:8500"
+    command: agent --dev -ui -client=0.0.0.0
+    healthcheck:
+      test: ["CMD", "curl", "http://localhost:8500/v1/status/leader"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+  config:
+    image: aostreetart/populateaeselconfig:latest
+    container_name: config
+    command: ./populate_consul.sh registry
+    depends_on:
+      registry:
+        condition: service_healthy
+  cache:
+    image: redis
+    container_name: cache
+  graphdb:
+    image: neo4j
+    container_name: graph-db
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - ${HOME}/neo4j/data:/data
+    environment:
+      NEO4J_AUTH: none
+  documentdb:
+    image: mongo
+    container_name: document-db
+    ports:
+      - "27017:27017"
+  queue:
+    image: spotify/kafka
+    container_name: queue
+    ports:
+      - "9092:9092"
+      - "2181:2181"
+    environment:
+      ADVERTISED_PORT: 9092
+      ADVERTISED_HOST: "queue"
+  crazyivan:
+    image: aostreetart/crazyivan:latest
+    container_name: crazyivan
+    ports:
+      - "5555:5555"
+    depends_on:
+      - "config"
+    command: -consul-addr=registry:8500 -ip=localhost -advertised-host=crazyivan -port=5555 -log-conf=CrazyIvan/log4cpp.properties -wait=9
+  clyman:
+    image: aostreetart/clyman:latest
+    container_name: clyman
+    ports:
+      - "5556:5556"
+    depends_on:
+      - "config"
+    command: -consul-addr=registry:8500 -ip=localhost -advertised-host=clyman -port=5556 -log-conf=CLyman/log4cpp.properties -wait=9
+  adrestia:
+    image: aostreetart/adrestia:latest
+    container_name: adrestia
+    ports:
+      - "5886:5886/udp"
+      - "5885:5885"
+    environment:
+      SPRING_APPLICATION_JSON: '{"logging":{"level":{"org":{"springframework":"INFO","mongodb":"INFO","hibernate":"INFO","apache":{"http":"INFO"}}}},"server":{"port":"5885","udp":{"port":"5886"},"mongo":{"host":"document-db","port":"27017"},"zmq":{"redlist":{"duration":"10"},"greylist":{"duration":"10"},"blacklist":{"duration":"10"},"retries":"3","timeout":"10000"}},"management":{"port":"5885","address":"127.0.0.1"},"spring":{"application":{"name":"Adrestia"},"profiles":{"active":"dev"},"cloud":{"consul":{"host":"registry","discovery":{"preferIpAddress":false}}},"http":{"multipart":{"max-file-size":"128MB","max-request-size":"128MB"}}}}'
