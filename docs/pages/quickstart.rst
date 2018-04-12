@@ -23,10 +23,8 @@ please be sure to follow the steps in the following links:
 
 .. admonition:: Note
 
-   * Docker Community Edition is more than sufficient, but if you already have a subscription
-   to Docker Enterprise, that will work perfectly well too.
-   * Windows users will typically have compose installed with Docker, and won't need to follow
-   the steps in the second link.
+   * Docker Community Edition is more than sufficient, but if you already have a subscription to Docker Enterprise, that will work perfectly well too.
+   * Windows users will typically have compose installed with Docker, and won't need to follow the steps in the second link.
 
 Starting Aesel
 --------------
@@ -38,7 +36,9 @@ Unzip the files, and open a terminal/command prompt from the main folder.
 Run the following commands:
 
 ``cd compose``
+
 ``cd min``
+
 ``docker-compose up``
 
 .. admonition:: Note

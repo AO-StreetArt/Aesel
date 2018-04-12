@@ -25,4 +25,4 @@ We encourage the use of Stack Overflow for a few reasons:
 * Once the question is answered, it is searchable and viewable by everyone else.
 * The forum format offers an easy method to get a larger community involved with a tougher question.
 
-If you believe that you have found a bug in Aesel, or have an enhancement request, we encourage you to raise an issue on our github page.
+If you believe that you have found a bug in Aesel, or have an enhancement request, we encourage you to raise an issue on our `github page <https://github.com/AO-StreetArt/Aesel>`__.
