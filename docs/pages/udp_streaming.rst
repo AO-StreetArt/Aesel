@@ -24,12 +24,12 @@ The following workflows will be outlined in the below document:
 Components
 ~~~~~~~~~~
 
-.. include:: components_insert.rst
+.. include:: insert/components_insert.rst
 
 Section 2: Vocabulary
 ---------------------
 
-.. include:: vocab.rst
+.. include:: insert/vocab.rst
 
 Section 3: Workflow Overviews
 -----------------------------

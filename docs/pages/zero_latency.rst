@@ -20,12 +20,12 @@ solution.
 Section 2: Components
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: components_insert.rst
+.. include:: insert/components_insert.rst
 
 Section 3: Vocabulary
 ---------------------
 
-.. include:: vocab.rst
+.. include:: insert/vocab.rst
 
 Section 4: Architecture
 -----------------------

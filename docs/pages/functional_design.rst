@@ -34,9 +34,9 @@ The following workflows will be outlined in the below document:
 Components
 ~~~~~~~~~~
 
-.. include:: components_insert.rst
+.. include:: insert/components_insert.rst
 
-.. include:: vocab.rst
+.. include:: insert/vocab.rst
 
 Section 3: Individual Workflows
 -------------------------------
