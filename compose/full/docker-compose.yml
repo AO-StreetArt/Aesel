@@ -54,16 +54,6 @@ services:
     depends_on:
       registry:
         condition: service_healthy
-  cache:
-    image: redis
-    container_name: cache
-    logging:
-      driver: gelf
-      options:
-        gelf-address: udp://localhost:12201
-    depends_on:
-      logstash:
-        condition: service_healthy
   graphdb:
     image: neo4j
     container_name: graph-db

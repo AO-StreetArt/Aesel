@@ -17,7 +17,7 @@ Scene Registration
 
    :query string device\_id:  Required. Unique identifier for the device registering to the scene.
    :query string device\_host:  Required. Hostname of the device for UDP streaming.
-   :query string device\_id:  Required. Port of the device for UDP Streaming.
+   :query string device\_port:  Required. Port of the device for UDP Streaming.
    :<json array(float) translation: Optional.  The translation of the device relative to the scene coordinate system.
    :<json array(float) rotation: Optional.  The rotation of the device relative to the scene coordinate system.
    :reqheader Content-Type: Application/json

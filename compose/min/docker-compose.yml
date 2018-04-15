@@ -19,9 +19,6 @@ services:
     depends_on:
       registry:
         condition: service_healthy
-  cache:
-    image: redis
-    container_name: cache
   graphdb:
     image: neo4j
     container_name: graph-db

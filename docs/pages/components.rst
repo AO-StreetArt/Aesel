@@ -56,13 +56,6 @@ Neo4j serves as the primary data store behind Crazy Ivan, storing all Scene info
 
 * `Home Page <https://neo4j.com/developer/get-started/>`__
 
-Redis
------
-
-Redis supports both Object-level locking and atomic transactions.
-
-* `Home Page <https://redis.io/>`__
-
 Consul
 ------
 

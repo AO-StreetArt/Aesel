@@ -51,10 +51,7 @@ sort of response.
 
 Section 5: In-Memory Caching
 ----------------------------
-Currently, Redis is used as an atomic cache for preserving object locks and atomic
-transactions.  If CLyman and CrazyIvan are deployed as a pair, each serving up
-updates for one or more independent scenes, then updates sent into the server
-can use in-memory caching to prevent network calls to Redis.
+In-memory caching can be used to prevent repeated network calls
 
 
 Section 5: Required Changes
