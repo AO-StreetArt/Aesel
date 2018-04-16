@@ -62,6 +62,7 @@ In-memory caching can be used to prevent repeated network calls within Crazy Iva
 * If not present, execute query & populate. If configured to still send updates, do so
 * If present, send update
 * On background thread, periodically query Neo4j and populate Scene-Device cache
+* Crazy Ivan should always keep in memory those scenes in it's region (per region-specific server pairs)
 
 Section 6: CLyman UDP Endpoint
 ------------------------------
