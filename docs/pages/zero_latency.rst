@@ -88,7 +88,8 @@ register to the specified region.
 
 Adrestia will need to provide the address of particular pairs of CLyman/CrazyIvan
 to devices upon registration.  The devices can then send UDP updates directly to
-CLyman
+CLyman.  Adrestia will also need logic to provide alternate server pairs upon request
+when devices detect that the server is down.
 
 Section 9: Required Changes
 ---------------------------
