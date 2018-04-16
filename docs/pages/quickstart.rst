@@ -6,25 +6,12 @@ Getting Started with Aesel
 System Requirements
 -------------------
 
-In order to run Aesel, you should have at least:
-
-* 8GB RAM Available
-* 4GB Hard Disk Space Available
+.. include:: insert/system_reqs.rst
 
 Docker
 ------
 
-The easiest way to get started with Aesel is with `Docker <https://www.docker.com/>`__
-and `Docker Compose <https://docs.docker.com/compose/>`__.  Before continuing,
-please be sure to follow the steps in the following links:
-
-* https://docs.docker.com/install/
-* https://docs.docker.com/compose/install/
-
-.. admonition:: Note
-
-   * Docker Community Edition is more than sufficient, but if you already have a subscription to Docker Enterprise, that will work perfectly well too.
-   * Windows users will typically have compose installed with Docker, and won't need to follow the steps in the second link.
+.. include:: insert/docker.rst
 
 Starting Aesel
 --------------
