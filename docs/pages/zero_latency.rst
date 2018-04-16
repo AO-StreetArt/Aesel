@@ -27,7 +27,7 @@ Section 3: Vocabulary
 
 .. include:: insert/vocab.rst
 
-Section 4: Architecture
+Section 4: Overview
 -----------------------
 
 Zero-latency means that there can be submillisecond network latency incurred
@@ -49,12 +49,47 @@ both invalid.  We'll have to aggressively health check them to detect when failu
 occur, because clients will just keep sending messages and won't receive any
 sort of response.
 
+Adrestia will need significant changes in order to recognize specific server pairs
+associated to a region.  More details in section
+
 Section 5: In-Memory Caching
 ----------------------------
-In-memory caching can be used to prevent repeated network calls
 
+In-memory caching can be used to prevent repeated network calls within Crazy Ivan
 
-Section 5: Required Changes
+* On receipt of kafka update, add scene to time-expired cache of scene ID's
+* Check Scene-Device cache (seperate, time-expired cache of scene ID's and device info) for scene
+* If not present, execute query & populate. If configured to still send updates, do so
+* If present, send update
+* On background thread, periodically query Neo4j and populate Scene-Device cache
+
+Section 6: CLyman UDP Endpoint
+------------------------------
+
+CLyman needs to be able to accept Object Overwrite messages via UDP, mimicking the
+UDP API exposed by Adrestia.
+
+Section 7: ZMQ Pub-Sub Change Streams
+-------------------------------------
+
+CLyman and Crazy Ivan both need to be updated to support configurable change
+stream back-ends, either Kafka or ZMQ.
+
+The ZMQ Model should use Pub-Sub to communicate with a particular instance of
+Crazy Ivan, and should support IPC, ITC, as well as TCP.
+
+Section 8: Region-Specific Server Pairs
+---------------------------------------
+
+Clyman/CrazyIvan pairs will need to register as pairs with Consul, making them
+distinct enough to register the pairing within Adrestia.  They will also need to
+register to the specified region.
+
+Adrestia will need to provide the address of particular pairs of CLyman/CrazyIvan
+to devices upon registration.  The devices can then send UDP updates directly to
+CLyman
+
+Section 9: Required Changes
 ---------------------------
 
 * Add UDP Endpoint to CLyman
