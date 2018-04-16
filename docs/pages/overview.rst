@@ -1,7 +1,7 @@
 .. _overview:
 
-What is Aesel
-=============
+Aesel Workflow
+==============
 
 Aesel builds on top of a traditional video game server by tracking relationships between coordinate systems.  This is a critical
 component when supporting Augmented Reality clients who are rendering these objects on top of a view of real space.  In this case,
@@ -125,3 +125,5 @@ This message to Aesel comes as a De-Registration Message:
 Notice that we only de-register after performing any corrections needed, and once we are synchronized
 we can leave the original scene.  Also note that we do not necessarily need to leave the original scene.
 We may also remain registered and continue receiving updates on all objects in both scenes.
+
+:ref:`Continue on to Loading an Aesel Scene to read about the process of loading an Aesel scene<tests>`

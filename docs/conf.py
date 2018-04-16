@@ -126,7 +126,7 @@ html_theme_options = {
     'navbar_links': [
         ("Getting Started", "pages/getting_started_index"),
         ("HTTP API", "pages/DVS_API"),
-        ("Aesel Home", "https://aostreetart.com/aolabs/aesel/", True),
+        ("Advanced Topics", "pages/advanced_index"),
     ],
 
     # Render the next and previous page links in navbar. (Default: true)

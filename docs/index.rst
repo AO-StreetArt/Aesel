@@ -14,3 +14,4 @@
    pages/getting_started_index.rst
    pages/DVS_API.rst
    pages/design_index.rst
+   pages/advanced_index.rst

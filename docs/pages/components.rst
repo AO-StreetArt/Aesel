@@ -14,7 +14,7 @@ Below you can find the components that comprise the Aesel Architecture:
 Adrestia
 --------
 
-Adrestia acts as the HTTP Gateway for external clients into Aesel.  It handles recieving
+Adrestia acts as the HTTP & UDP Gateway for external clients into Aesel.  It handles recieving
 direct requests from these clients, translating them into messages for underlying services,
 sending those messages and receiving a response, and translating that response back for
 client consumption.

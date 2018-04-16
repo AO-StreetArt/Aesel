@@ -50,3 +50,5 @@ The following user interfaces will be available by default:
 I recommend `MongoDB Compass <https://www.mongodb.com/products/compass>__`, Community Edition,
 which can connect on localhost:27017.  `Mongo <https://www.mongodb.com/>`__ is the
 database which stores object and asset information.
+
+:ref:`Continue on to the overview to read more about interacting with Aesel<tests>`
