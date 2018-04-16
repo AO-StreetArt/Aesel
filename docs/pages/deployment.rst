@@ -37,6 +37,10 @@ load balance between instances of CLyman/Crazy Ivan.  An HTTP reverse proxy (suc
 used to balance between instances of Adrestia for HTTP requests, but there is currently no good way
 to balance the UDP requests between the instances outside the client.
 
+The planned changes for the Zero Latency Design are expected to address this shortcoming
+and allow Adrestia to sit completely behind an HTTP Reverse Proxy, with CLyman providing
+the UDP API.
+
 Security
 --------
 

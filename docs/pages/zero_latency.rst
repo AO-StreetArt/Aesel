@@ -98,3 +98,5 @@ Section 9: Required Changes
 * Add IPC Support to ZeroMQ Driver in AOSSL
 * Add configurable logic in Adrestia to pass UDP endpoints to devices
 * Add Scene-Device Caching logic in CrazyIvan so no DB calls need to be made
+* Aggressive health-checking of CLyman & Crazy Ivan service pairs
+* Logic in Adrestia to provide an updated UDP endpoint to devices on failure
