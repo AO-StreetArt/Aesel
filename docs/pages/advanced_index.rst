@@ -1,4 +1,4 @@
-Getting Started
+Advanced Topics
 ===============
 
 .. _advanced_index:

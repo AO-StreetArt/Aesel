@@ -15,5 +15,3 @@ Getting Started
    quickstart.rst
    overview.rst
    loading.rst
-   components.rst
-   deployment.rst
