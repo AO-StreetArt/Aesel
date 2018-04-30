@@ -14,4 +14,4 @@ Design Documents
 
    functional_design.rst
    udp_streaming.rst
-   zero_latency.rst
+   event_streaming.rst
