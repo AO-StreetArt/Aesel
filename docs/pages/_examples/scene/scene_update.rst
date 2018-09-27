@@ -6,7 +6,7 @@
     Content-Type: application/json
 
     {
-      "name": "test"
+      "name": "test",
       "region":"US-MD",
       "latitude":124,
       "longitude":122,
