@@ -14,13 +14,22 @@ Below you can find the components that comprise the Aesel Architecture:
 Adrestia
 --------
 
-Adrestia acts as the HTTP & UDP Gateway for external clients into Aesel.  It handles recieving
-direct requests from these clients, translating them into messages for underlying services,
-sending those messages and receiving a response, and translating that response back for
-client consumption.
+Adrestia acts as the HTTP Gateway for external clients into Aesel.  It abstracts
+away the various clusters of event-based components into a single transactional
+plane for both users and other services to utilize.
 
 * `Home Page <https://github.com/AO-StreetArt/Adrestia>`__
 * `Documentation <http://adrestia.readthedocs.io/en/latest/>`__
+
+Kelona
+------
+
+Kelona stores graphics assets, and tracks various versions of those assets over
+time.  Effectively, it acts as a Version Control System for large-scale, binary files
+for large-scale userbases.
+
+* `Home Page <https://github.com/AO-StreetArt/Kelona>`__
+* `Documentation <http://kelona.readthedocs.io/en/latest/>`__
 
 CLyman
 ------
@@ -62,10 +71,3 @@ Consul
 Consul serves as both a service registry and a distributed configuration store.
 
 * `Home Page <https://www.consul.io/>`__
-
-Kafka
------
-
-Apache Kafka serves as an intermediate message queue between CLyman and Crazy Ivan for Object Change Streams.
-
-* `Home Page <https://kafka.apache.org/>`__

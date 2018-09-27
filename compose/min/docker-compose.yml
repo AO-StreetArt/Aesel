@@ -12,13 +12,6 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-  config:
-    image: aostreetart/populateaeselconfig:latest
-    container_name: config
-    command: ./populate_consul.sh registry
-    depends_on:
-      registry:
-        condition: service_healthy
   graphdb:
     image: neo4j
     container_name: graph-db
@@ -28,42 +21,66 @@ services:
     volumes:
       - ${HOME}/neo4j/data:/data
     environment:
-      NEO4J_AUTH: none
+      - NEO4J_AUTH=none
   documentdb:
     image: mongo
     container_name: document-db
     ports:
       - "27017:27017"
-  queue:
-    image: spotify/kafka
-    container_name: queue
-    ports:
-      - "9092:9092"
-      - "2181:2181"
-    environment:
-      ADVERTISED_PORT: 9092
-      ADVERTISED_HOST: "queue"
   crazyivan:
-    image: aostreetart/crazyivan:latest
+    image: aostreetart/crazyivan:v2
     container_name: crazyivan
     ports:
-      - "5555:5555"
+      - "8766:8766"
+      - "8764:8764/udp"
+    environment:
+      - IVAN_PROD_NEO4J=neo4j://graph-db:7687
+      - IVAN_PROD_HTTP_HOST=crazyivan
+    command: consul=http://registry:8500
     depends_on:
-      - "config"
-    command: -consul-addr=registry:8500 -ip=localhost -advertised-host=crazyivan -port=5555 -log-conf=CrazyIvan/log4cpp.properties -wait=9
+      registry:
+        condition: service_healthy
   clyman:
-    image: aostreetart/clyman:latest
+    image: aostreetart/clyman:v2
     container_name: clyman
     ports:
-      - "5556:5556"
+      - "8768:8768"
+      - "8762:8762/udp"
+    environment:
+      - CLYMAN_PROD_MONGO=mongodb://document-db:27017
+      - CLYMAN_PROD_HTTP_HOST=clyman
+      - CLYMAN_PROD_EVENT_DESTINATION_HOST=${NETWORK_INTERFACE_ADDRESS}
+      - CLYMAN_PROD_EVENT_DESTINATION_PORT=8764
+    command: consul=http://registry:8500
     depends_on:
-      - "config"
-    command: -consul-addr=registry:8500 -ip=localhost -advertised-host=clyman -port=5556 -log-conf=CLyman/log4cpp.properties -wait=9
+      registry:
+        condition: service_healthy
+  kelona:
+    image: aostreetart/kelona:latest
+    container_name: kelona
+    ports:
+      - "5635:5635"
+    depends_on:
+      registry:
+        condition: service_healthy
+    environment:
+      - SERVER_MONGO_HOST=document-db
+      - SPRING_CLOUD_CONSUL_HOST=registry
+      - SPRING_CLOUD_CONSUL_DISCOVERY_PREFERIPADDRESS=true
   adrestia:
-    image: aostreetart/adrestia:latest
+    image: aostreetart/adrestia:v2
     container_name: adrestia
     ports:
-      - "5886:5886/udp"
-      - "5885:5885"
+      - "8080:8080"
+    depends_on:
+      registry:
+        condition: service_healthy
     environment:
-      SPRING_APPLICATION_JSON: '{"logging":{"level":{"org":{"springframework":"INFO","mongodb":"INFO","hibernate":"INFO","apache":{"http":"INFO"}}}},"server":{"port":"5885","udp":{"port":"5886"},"mongo":{"host":"document-db","port":"27017"},"zmq":{"redlist":{"duration":"10"},"greylist":{"duration":"10"},"blacklist":{"duration":"10"},"retries":"3","timeout":"10000"}},"management":{"port":"5885","address":"127.0.0.1"},"spring":{"application":{"name":"Adrestia"},"profiles":{"active":"dev"},"cloud":{"consul":{"host":"registry","discovery":{"preferIpAddress":false}}},"http":{"multipart":{"max-file-size":"128MB","max-request-size":"128MB"}}}}'
+      - SERVER_MONGO_HOST=document-db
+      - SERVICE_STATIC_CLUSTER=test
+      - SERVICE_IVAN_HOST=crazyivan
+      - SERVICE_CLYMAN_HOST=clyman
+      - SERVICE_AVC_HOST=kelona
+      - SPRING_CLOUD_CONSUL_HOST=registry
+      - SPRING_CLOUD_CONSUL_DISCOVERY_PREFERIPADDRESS=true
+      - SPRING_CLOUD_CONSUL_DISCOVERY_HEALTHCHECKURL=http://adrestia:8080/actuator/health

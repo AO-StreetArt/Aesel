@@ -88,10 +88,4 @@ Asset History
    The array 'assetIds' will contain a list of all the versions of this asset, with
    the most recent listed first and the original ID listed last.
 
-   :>jsonarr string id: The unique identifier for this asset history
-   :>jsonarr string scene: The scene associated to this asset history
-   :>jsonarr string object: The object associated to this asset history
-   :>jsonarr string asset: The ID of the current asset associated to this history
-   :>jsonarr array(string) assetIds: A list of all the assets in this history, in order from newest to oldest
-
 .. include:: _examples/asset/asset_history.rst

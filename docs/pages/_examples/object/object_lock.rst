@@ -1,4 +1,4 @@
-..  http:example:: curl wget httpie python-requests
+...  http:example:: curl wget httpie python-requests
 
-    GET /v1/scene/testScene/object/testObject/lock?owner=abc HTTP/1.1
-    Host: localhost:5885
+    GET /v1/scene/testScene/object/testObject/lock?device=123 HTTP/1.1
+    Host: localhost:8080

@@ -1,9 +1,9 @@
 HTTP/1.1 200 OK
-Location: http://localhost:5885/v1/scene/testScene/object/testObject
+Location: http://localhost:8080/v1/scene/testScene/object/testObject
 Content-Type: application/json
 
 {
-  "num_records":1, 
+  "num_records":1,
   "objects":[
     {
     "key":"5951dd759af59c00015b1409",

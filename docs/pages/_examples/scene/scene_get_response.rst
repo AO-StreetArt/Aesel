@@ -4,6 +4,7 @@ Content-Type: application/json
 
 {
   "key":"jklmnop",
+  "name":"test",
   "region":"US-MD",
   "latitude":124.0,
   "longitude":122.0,

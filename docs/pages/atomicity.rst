@@ -21,10 +21,7 @@ It is still possible for other devices to query or get the object, and retrieve 
 Object Change Streams
 ---------------------
 
-In the Object Change Stream API, a significant change occurs in the API.  Instead of devices sending in
-changes to the Object location, rotation, or scale, they are sending in the current values for all of
-the locations.  This is due to a fundamental shift in assumption, as this communication channel primarily
-relies on UDP.  Because of this, we still guarantee atomic transactions, but the results of any given
-transaction may fail to reach any given device.  For this reason, users are generally expected to send a large
-volume of these messages in most cases, continually informing Aesel of the current location, rotation, and
-scale of the updated object.
+In the Object Change Stream API, a significant change occurs in the API.  We still guarantee atomic transactions,
+but the results of any event may fail to reach any given device.  For this reason, users are generally expected to
+send a large volume of these messages in most cases, continually informing Aesel of the current values of the object
+or property in question.

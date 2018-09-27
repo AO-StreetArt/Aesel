@@ -33,14 +33,14 @@ Run the following commands:
    Linux users may need to call ``sudo docker-compose up``, depending on how you have installed Docker.
 
 Congratulations, Aesel is now up and running on your computer!  To make sure that everything started
-correctly, open up your web browser after about 30 seconds and go to the address http://localhost:5885/health.
+correctly, open up your web browser after about 30 seconds and go to the address http://localhost:8080/health.
 You should see that STATUS is UP.
 
 Interacting with Aesel
 ----------------------
 
-Aesel's HTTP API will be available at http://localhost:5885, and the UDP API will be
-available at localhost:5886.
+Aesel's HTTP API will be available at http://localhost:8080.  The UDP API for CLyman
+(https://clyman.readthedocs.io/en/v2/pages/Events_API.html) is available at localhost:8762.
 
 The following user interfaces will be available by default:
 
@@ -49,6 +49,6 @@ The following user interfaces will be available by default:
 
 I recommend `MongoDB Compass <https://www.mongodb.com/products/compass>__`, Community Edition,
 which can connect on localhost:27017.  `Mongo <https://www.mongodb.com/>`__ is the
-database which stores object and asset information.
+database which stores object, property, asset, and routing information.
 
 :ref:`Continue on to the overview to read more about interacting with Aesel<tests>`

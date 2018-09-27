@@ -19,9 +19,13 @@ Scalability
 
 Aesel is built to be horizontally scalable, so it can also run across multiple servers.
 
-Adrestia, Crazy Ivan, and CLyman can all be run with multiple independent instances on
-independent servers.  Consul Agents should run on each server as well.  Mongo, Kafka, and
-Neo4j can all be clustered to increased scalability for the underlying data stores.
+Crazy Ivan, CLyman, and Mongo form separate clusters which each manage disparate
+scenes.  Adrestia forms a Service Mesh on top of these clusters, allowing transparent,
+transactional access.  Neo4j, Adrestia, and Kelona are all completely horizontally
+scalabale, with many instances able to run simultaneously.
+
+Consul Agents should run on each server as well.  Mongo and Neo4j can all
+be clustered to increased scalability for the underlying data stores.
 
 Docker
 ------
@@ -32,17 +36,16 @@ any architecture that supports Docker (ie. Docker Swarm or Kubernetes).
 Load Balancing
 --------------
 
-Adrestia serves as the gateway for both HTTP and UDP, and will automatically
+Adrestia serves as the gateway for both HTTP, and will automatically
 load balance between instances of CLyman/Crazy Ivan.  An HTTP reverse proxy (such as NGINX) can be
-used to balance between instances of Adrestia for HTTP requests, but there is currently no good way
-to balance the UDP requests between the instances outside the client.
+used to balance between instances of Adrestia for HTTP requests, if desired.
 
-The planned changes for the Zero Latency Design are expected to address this shortcoming
-and allow Adrestia to sit completely behind an HTTP Reverse Proxy, with CLyman providing
-the UDP API.
+When a device registers to a scene, it is provided an instance of CLyman to
+send updates to.  This means that the UDP streaming is inherently load balanced
+within each cluster.
 
 Security
 --------
 
-Currently, security components are not active within Aesel.  Until that time,
+Currently, security components are not active within all Aesel components.  Until that time,
 it is not advised that Aesel be deployed in such a way as to be accessible on a public network.
