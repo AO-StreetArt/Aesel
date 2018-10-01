@@ -15,3 +15,4 @@ Design Documents
    functional_design.rst
    udp_streaming.rst
    event_streaming.rst
+   animation_client_design.rst
