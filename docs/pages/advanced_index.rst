@@ -12,6 +12,7 @@ Advanced Topics
    :maxdepth: 1
    :caption: Contents:
 
+   authentication.rst
    components.rst
    deployment.rst
    atomicity.rst
