@@ -21,71 +21,82 @@ to collect all of the assets within that scene.
 Asset Creation
 ~~~~~~~~~~~~~~
 
-.. http:post:: /v1/asset
+.. http:post:: /v1/asset/
 
-   Create an asset.  The file being stored should be sent in the form-data of the body, with multi-part
-   form sending supported.  The body of the response will be a string of the key from which the asset can be
-   retrieved using the GET request below.
+   Create a new asset from the File Data in the body of the request.  If the
+   'related-id' and 'related-type' are also populated, then an Asset Relationship
+   is created as well.
 
-   :query string scene: Scene ID to associate the asset to
-   :query string object: Object ID to associate the asset to
-   :query string content-type: Content Type of the asset
-   :query string file-type: File Type of the asset
-   :form file: The file to store
+   :query string content-type: Optional.  The content type of the asset (ie. application/json).
+   :query string file-type: Optional.  The file type of the asset (ie. json).
+   :query string related-id: Optional.  Must appear with 'related-type'.  Used to create a relationship to the specified object.
+   :query string related-type: Optional.  Must appear with 'related-id'.  Used the create a relationship of the specified type.
+   :query string asset-type: Optional.  Populated into the query-able Asset Metadata.
+   :reqheader Content-Type: multipart/*
+   :statuscode 200: Success
 
 .. include:: _examples/asset/asset_create.rst
 
 Asset Update
 ~~~~~~~~~~~~
 
-.. http:post:: /v1/asset/(key)
+.. http:post:: /v1/asset/{asset_key}
 
-   When a device needs to update an asset, the Asset Update API can create
-   a new version of the file, with a new unique key, and update the scene
-   so that the latest version is downloaded by other devices.
+   Update an existing Asset.  This returns a new key for the asset, and adds
+   an entry to the associated Asset History.  This will also update all relationships
+   which were associated to the old Asset, and associate them to the new Asset.
 
-   Please note that multiple devices each downloading an asset, making
-   separate updates, and expecting Aesel to merge the changes together
-   is not supported.
-
-   :query string scene: Scene ID to associate the asset to
-   :query string object: Object ID to associate the asset to
-   :query string content-type: Content Type of the asset
-   :query string file-type: File Type of the asset
-   :form file: The file to store
+   :query string content-type: Optional.  The content type of the asset (ie. application/json).
+   :query string file-type: Optional.  The file type of the asset (ie. json).
+   :query string asset-type: Optional.  Populated into the query-able Asset Metadata.
+   :reqheader Content-Type: multipart/*
+   :statuscode 200: Success
 
 .. include:: _examples/asset/asset_update.rst
 
-Asset Retrieve
-~~~~~~~~~~~~~~
+Asset Retrieval
+~~~~~~~~~~~~~~~
 
-.. http:get:: /v1/asset/(key)
+.. http:get:: /v1/asset/(asset_key)
 
-   The retrieval API allows a device to retrieve one asset, which will be returned
-   in the body of the response.
+   Retrieve an asset by ID.
+
+   :statuscode 200: Success
 
 .. include:: _examples/asset/asset_get.rst
 
-Asset Delete
-~~~~~~~~~~~~
+Asset Metadata Query
+~~~~~~~~~~~~~~~~~~~~
 
-.. http:delete:: /v1/asset/(key)
+.. http:get:: /v1/asset
 
-   The delete API allows a device to remove one object asset.
+   Query Asset Metadata based on various attributes.
 
-   :query string scene: Scene ID to disassociate the asset from
-   :query string object: Object ID to disassociate the asset from
+   :query string content-type: Optional.  The content type of the asset (ie. application/json).
+   :query string file-type: Optional.  The file type of the asset (ie. json).
+   :query string asset-type: Optional.  Valid options are 'standard' (for normal assets), and 'thumbnail' for thumbnail assets.
+   :statuscode 200: Success
+
+.. include:: _examples/asset/asset_query.rst
+
+Asset Deletion
+~~~~~~~~~~~~~~
+
+.. http:delete:: /v1/asset/(asset_key)
+
+   Delete an asset.
+
+   :statuscode 200: Success
 
 .. include:: _examples/asset/asset_delete.rst
 
-Asset History
-~~~~~~~~~~~~~
+Asset History Retrieval
+~~~~~~~~~~~~~~~~~~~~~~~
 
-.. http:get:: /v1/asset-history/(key)
+.. http:get:: /v1/asset/(asset_key)
 
-   The asset history API allows you to view a history of all versions of an asset.
+   An Asset History is a record of all the versions of a particular asset.
 
-   The array 'assetIds' will contain a list of all the versions of this asset, with
-   the most recent listed first and the original ID listed last.
+   :statuscode 200: Success
 
 .. include:: _examples/asset/asset_history.rst
