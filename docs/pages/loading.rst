@@ -38,7 +38,11 @@ or, we can find Scenes with a Scene Query:
 Loading Scene Assets
 ~~~~~~~~~~~~~~~~~~~~
 
-Now that we have our scene, we issue an Asset Retrieval Message for each key listed in the 'assets' field:
+Now that we have our scene, We query for Assets related to the scene:
+
+.. include:: _examples/asset/asset_relationship_query.rst
+
+we issue an Asset Retrieval Message for each asset listed in the response:
 
 .. include:: _examples/asset/asset_get.rst
 
@@ -54,6 +58,5 @@ Loading Object Assets
 ~~~~~~~~~~~~~~~~~~~~~
 
 Loading Object Assets follows exactly the same process as retrieving Scene Assets,
-only using the keys listed in the 'assets' field from the Object:
-
-.. include:: _examples/asset/asset_get.rst
+only we query the Asset Relationship API with relationship-type=object, instead of
+'scene'.
