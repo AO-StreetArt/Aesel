@@ -1,4 +1,4 @@
 ..  http:example:: curl wget httpie python-requests
 
-    DELETE /v1/scene/name/registration?device_id=abcdef123\ HTTP/1.1
+    DELETE /v1/deregister HTTP/1.1
     Host: localhost:8080
