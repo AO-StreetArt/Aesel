@@ -9,7 +9,7 @@ de-registration, and synchronization of devices to scenes.
 Scene Registration
 ~~~~~~~~~~~~~~~~~~
 
-.. http:post:: /v1/scene/(key)/registration
+.. http:post:: /v1/scene/(key)/register
 
    Devices are expected to register to scenes as they move through space.
    This tells Aesel what objects that device needs to receive information

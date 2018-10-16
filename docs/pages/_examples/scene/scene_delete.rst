@@ -1,4 +1,4 @@
 ..  http:example:: curl wget httpie python-requests
 
-    DELETE /v1/scene/key HTTP/1.1
-    Host: localhost:8080
+    DELETE /v1/scene/name HTTP/1.1
+    Host: localhost:5885

@@ -1,7 +1,7 @@
 ..  http:example:: curl wget httpie python-requests
 
-    POST /v1/align HTTP/1.1
-    Host: localhost:8080
+    POST /v1/scene/jklmnop/align HTTP/1.1
+    Host: localhost:5885
     Content-Type: application/json
 
     {
