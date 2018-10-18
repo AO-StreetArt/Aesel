@@ -15,7 +15,7 @@ Scene Creation
    :reqheader Content-Type: Application/json
    :statuscode 200: Success
 
-.. include:: _examples/scene/scene_create.rst
+.. include:: _examples/scene/scene_create_key.rst
 
 Scene Update
 ~~~~~~~~~~~~
@@ -49,7 +49,7 @@ Scene Deletion
    Delete a scene.
 
    CAUTION: This will delete all information associated to a scene,
-   including all objects in the scene, and any registrations to devices.
+   including all registered devices.
 
    :statuscode 200: Success
 

@@ -12,6 +12,9 @@
           "devices":[
             {
               "key":"Ud132",
+              "hostname": "localhost",
+        			"port":4444,
+        			"connection_string": "127.0.0.1:4444",
               "transform":{
                 "translation":[0,0,0],
                 "rotation":[0,0,0]

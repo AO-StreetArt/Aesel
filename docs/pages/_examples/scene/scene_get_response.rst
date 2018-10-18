@@ -9,7 +9,7 @@ Content-Type: application/json
     "start_record": 0,
     "scenes": [
         {
-            "key": "855ca840-c864-11e8-9a4a-309c23d74017",
+            "key": "123",
             "name": "testScene",
             "region": "us-ga",
             "latitude": 100,

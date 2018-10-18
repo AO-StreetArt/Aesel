@@ -15,5 +15,6 @@ Aesel HTTP API
    Scene_API.rst
    Scene_Registration_API.rst
    Object_API.rst
+   Property_API.rst
    Object_Stream_API.rst
    Asset_API.rst

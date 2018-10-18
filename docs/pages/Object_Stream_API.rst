@@ -1,9 +1,10 @@
-Object Streaming API
---------------------
+Streaming API
+-------------
 
-The Streaming API allows for rapid updates to Object Transformations.  These
-updates are streamed out to other devices registered to the scene that contains
-the object.  This allows for live update streams with absolute minimal overhead.
+The Streaming API allows for rapid updates to Object Transformations and
+Property Values.  These updates are streamed out to other devices registered
+to the scene that contains the object.  This allows for live update streams
+with absolute minimal overhead.
 
 Once devices are rendering based on the objects in a scene,
 this is the only method that should be used to update the transforms
