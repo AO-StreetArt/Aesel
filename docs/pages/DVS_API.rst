@@ -18,3 +18,4 @@ Aesel HTTP API
    Property_API.rst
    Object_Stream_API.rst
    Asset_API.rst
+   Asset_Relationship_API.rst

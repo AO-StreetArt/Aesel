@@ -4,8 +4,8 @@ Property API
 ============
 
 A Property is a set of between 1 and 4 double values, which may
-or not be associated to properties.  Properties can also support frames and/or
-timestamps, just like properties, but cannot be locked and have no transformations.
+or not be associated to objects.  Properties can also support frames and/or
+timestamps, just like objects, but cannot be locked and have no transformations.
 
 Properties are meant to be interacted with by individual devices,
 and these changes will be streamed to other devices via the Events API.
