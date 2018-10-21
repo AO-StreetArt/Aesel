@@ -76,7 +76,7 @@ services:
       registry:
         condition: service_healthy
     environment:
-      - SERVER_MONGO_HOST=document-db
+      - MONGO_HOSTS=document-db
       - SERVICE_STATIC_CLUSTER=test
       - SERVICE_IVAN_HOST=crazyivan
       - SERVICE_CLYMAN_HOST=clyman
