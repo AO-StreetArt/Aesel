@@ -1,4 +1,4 @@
-..  http:example:: curl wget httpie python-requests
+..  http:example:: curl
     :response: scene_create_response.rst
 
     PUT /v1/scene/jklmnop HTTP/1.1

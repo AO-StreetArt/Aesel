@@ -1,4 +1,4 @@
-..  http:example:: curl wget httpie python-requests
+..  http:example:: curl
     :response: property_create_response.rst
 
     POST /v1/scene/jklmnop/property HTTP/1.1

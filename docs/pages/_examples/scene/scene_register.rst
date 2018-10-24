@@ -1,4 +1,4 @@
-..  http:example:: curl wget httpie python-requests
+..  http:example:: curl
     :response: scene_register_response.rst
 
     POST /v1/scene/jklmnop/register HTTP/1.1

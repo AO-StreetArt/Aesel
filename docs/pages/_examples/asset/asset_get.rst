@@ -1,4 +1,4 @@
-..  http:example:: curl wget httpie python-requests
+..  http:example:: curl
 
     GET /v1/asset/abcdef HTTP/1.1
     Host: localhost:8080

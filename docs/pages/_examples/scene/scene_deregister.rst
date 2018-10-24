@@ -1,4 +1,4 @@
-..  http:example:: curl wget httpie python-requests
+..  http:example:: curl
 
     POST /v1/scene/jklmnop/deregister HTTP/1.1
     Host: localhost:8080

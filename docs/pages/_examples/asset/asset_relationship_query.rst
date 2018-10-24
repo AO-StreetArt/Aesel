@@ -1,4 +1,4 @@
-..  http:example:: curl wget httpie python-requests
+..  http:example:: curl
     :response: asset_relationship_query_response.rst
 
     GET /v1/relationship?type=scene&related=123 HTTP/1.1

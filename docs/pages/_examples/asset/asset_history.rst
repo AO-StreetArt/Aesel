@@ -1,4 +1,4 @@
-..  http:example:: curl wget httpie python-requests
+..  http:example:: curl
     :response: asset_history_response.rst
 
     GET /v1/asset-history/abcdef HTTP/1.1

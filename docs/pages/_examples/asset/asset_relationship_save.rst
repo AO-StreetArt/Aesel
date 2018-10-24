@@ -1,4 +1,4 @@
-..  http:example:: curl wget httpie python-requests
+..  http:example:: curl
     :response: asset_relationship_save_response.rst
 
     PUT /v1/relationship HTTP/1.1
