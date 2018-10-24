@@ -33,10 +33,8 @@ Run the following commands:
    You will need the environment variable NETWORK_INTERFACE_ADDRESS set to your IP address for the development cluster
    UDP API to function correctly.  On Linux, this can be accomplished with:
 
-   export NETWORK_INTERFACE_NAME=$(route | grep '^default' | grep -o '[^ ]*$')
-   export NETWORK_INTERFACE_ADDRESS=$(ip addr show $NETWORK_INTERFACE_NAME | grep -Po 'inet \K[\d.]+')
-
-
+   * export NETWORK_INTERFACE_NAME=$(route | grep '^default' | grep -o '[^ ]*$')
+   * export NETWORK_INTERFACE_ADDRESS=$(ip addr show $NETWORK_INTERFACE_NAME | grep -Po 'inet \K[\d.]+')
 
 Congratulations, Aesel is now up and running on your computer!  To make sure that everything started
 correctly, open up your web browser after about 30 seconds and go to the address http://localhost:8080/health.
