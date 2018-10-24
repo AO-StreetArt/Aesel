@@ -13,8 +13,6 @@ elements of the object, for example type or assets.
 
 When utilizing the UDP API, there are several important things to remember:
 
-- You will be provided with a hostname and port upon registration.  This is the address
-to which you will send UDP messages.
-- In a secure environment, you will also be provided with encryption and decryption
-keys, which can be used to securely send UDP messages to the provided destination.
+- You will be provided with a hostname and port upon registration.  This is the address to which you will send UDP messages.
+- In a secure environment, you will also be provided with encryption and decryption keys, which can be used to securely send UDP messages to the provided destination.
 - UDP Messages follow the CLyman Event API (https://clyman.readthedocs.io/en/v2/pages/Events_API.html).
