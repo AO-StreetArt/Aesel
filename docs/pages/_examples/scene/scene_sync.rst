@@ -1,6 +1,6 @@
 ..  http:example:: curl
 
-    POST /v1/scene/jklmnop/align HTTP/1.1
+    POST /v1/scene/key/align HTTP/1.1
     Host: localhost:5885
     Content-Type: application/json
 

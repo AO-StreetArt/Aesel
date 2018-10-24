@@ -1,5 +1,5 @@
 HTTP/1.1 200 OK
-Location: http://localhost:5885/v1/scene/jklmnop
+Location: http://localhost:5885/v1/scene/key
 Content-Type: application/json
 
 {

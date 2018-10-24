@@ -1,7 +1,7 @@
 ..  http:example:: curl
     :response: property_create_response.rst
 
-    POST /v1/scene/jklmnop/property HTTP/1.1
+    POST /v1/scene/scene-key/property HTTP/1.1
     Host: localhost:8768
     Content-Type: application/json
 

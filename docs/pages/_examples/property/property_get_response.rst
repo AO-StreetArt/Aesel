@@ -1,5 +1,5 @@
 HTTP/1.1 200 OK
-Location: http://localhost:8768/v1/scene/jklmnop/property/{key}
+Location: http://localhost:8768/v1/scene/scene-key/property/key
 Content-Type: application/json
 
 {

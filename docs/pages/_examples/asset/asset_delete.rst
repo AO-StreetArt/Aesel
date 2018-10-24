@@ -1,4 +1,4 @@
 ..  http:example:: curl
 
-    DELETE /v1/asset/abcdef HTTP/1.1
+    DELETE /v1/asset/key HTTP/1.1
     Host: localhost:8080

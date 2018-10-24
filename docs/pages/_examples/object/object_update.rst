@@ -1,7 +1,7 @@
 ..  http:example:: curl
     :response: object_update_response.rst
 
-    POST /v1/scene/testScene/object/testObject HTTP/1.1
+    POST /v1/scene/scene-key/object/key HTTP/1.1
     Host: localhost:8080
     Content-Type: application/json
 

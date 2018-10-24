@@ -1,7 +1,7 @@
 ..  http:example:: curl
     :response: scene_create_response.rst
 
-    POST /v1/scene/name HTTP/1.1
+    POST /v1/scene/key HTTP/1.1
     Host: localhost:5885
     Content-Type: application/json
 

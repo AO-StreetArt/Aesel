@@ -1,7 +1,7 @@
 ..  http:example:: curl
     :response: scene_create_response.rst
 
-    PUT /v1/scene/jklmnop HTTP/1.1
+    PUT /v1/scene/key HTTP/1.1
     Host: localhost:5885
     Content-Type: application/json
 
