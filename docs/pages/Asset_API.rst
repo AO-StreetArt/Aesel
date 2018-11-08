@@ -65,6 +65,20 @@ Asset Retrieval
 
 .. include:: _examples/asset/asset_get.rst
 
+Asset Count
+~~~~~~~~~~~
+
+.. http:get:: /v1/asset/count
+
+   Count the total number of assets matching the given query.
+
+   :query string content-type: Optional.  The content type of the asset (ie. application/json).
+   :query string file-type: Optional.  The file type of the asset (ie. json).
+   :query string asset-type: Optional.  Valid options are 'standard' (for normal assets), and 'thumbnail' for thumbnail assets.
+   :statuscode 200: Success
+
+.. include:: _examples/asset/asset_count.rst
+
 Asset Metadata Query
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -75,6 +89,8 @@ Asset Metadata Query
    :query string content-type: Optional.  The content type of the asset (ie. application/json).
    :query string file-type: Optional.  The file type of the asset (ie. json).
    :query string asset-type: Optional.  Valid options are 'standard' (for normal assets), and 'thumbnail' for thumbnail assets.
+   :query limit: Optional.  The maximum number of records to return.
+   :query offset: Optional.  The number of records to skip, enabling pagination with the 'limit' parameter.
    :statuscode 200: Success
 
 .. include:: _examples/asset/asset_query.rst
