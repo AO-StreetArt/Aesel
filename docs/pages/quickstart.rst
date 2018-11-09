@@ -48,6 +48,7 @@ Aesel's HTTP API will be available at http://localhost:8080.  The UDP API for CL
 
 The following user interfaces will be available by default:
 
+* Aesel Web UI - http://localhost:8080/portal/home
 * `Consul <https://www.consul.io/>`__ (Configuration, System Status) - http://localhost:8500/ui
 * `Neo4j <https://neo4j.com/>`__ (Database storing Scene information) - http://localhost:7474
 
