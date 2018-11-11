@@ -27,6 +27,8 @@ Official client libraries are available for the following languages:
 
 * `Python <https://pyaesel.readthedocs.io/en/latest/index.html>`__
 
+Other languages are encouraged to make use of the HTTP and UDP API's directly.
+
 User Interface
 ~~~~~~~~~~~~~~
 
@@ -36,14 +38,14 @@ The following user interfaces will be available by default:
 * `Consul <https://www.consul.io/>`__ (Configuration, System Status) - http://localhost:8500/ui
 * `Neo4j <https://neo4j.com/>`__ (Database storing Scene information) - http://localhost:7474
 
-I recommend `MongoDB Compass <https://www.mongodb.com/products/compass>__`, Community Edition,
+I recommend `MongoDB Compass <https://www.mongodb.com/products/compass>`__, Community Edition,
 which can connect on localhost:27017.  `Mongo <https://www.mongodb.com/>`__ is the
 database which stores object, property, asset, and routing information.
 
 Client Applications
 -------------------
 
-Some popular 3D applications have existing Aesel integration:
+Some popular 3D applications have existing Aesel integrations:
 
 Blender
 ~~~~~~~
