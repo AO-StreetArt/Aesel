@@ -12,6 +12,7 @@ Getting Started
    :maxdepth: 1
    :caption: Contents:
 
+   install.rst
    quickstart.rst
    overview.rst
    loading.rst
