@@ -35,6 +35,17 @@ I recommend `MongoDB Compass <https://www.mongodb.com/products/compass>__`, Comm
 which can connect on localhost:27017.  `Mongo <https://www.mongodb.com/>`__ is the
 database which stores object, property, asset, and routing information.
 
+Client Applications
+-------------------
+
+Some popular 3D applications have existing Aesel integration:
+
+Blender
+~~~~~~~
+
+Aesel supports integration with the `Blender <https://www.blender.org/>`__ through
+an addon, `BlenderSync <https://blendersync.readthedocs.io/en/latest/>`__.
+
 Next
 ----
 
