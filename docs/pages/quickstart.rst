@@ -16,9 +16,8 @@ API
 ~~~
 
 If you setup a development environment, then Aesel's HTTP API will be available
-at http://localhost:8080.  The UDP API for CLyman
-(https://clyman.readthedocs.io/en/v2/pages/Events_API.html) is available at
-localhost:8762.
+at http://localhost:8080.  The `UDP API for CLyman <https://clyman.readthedocs.io/en/v2/pages/Events_API.html>`__
+is available at localhost:8762.
 
 If you are connecting to an existing Aesel Cloud, then the HTTP URL will be
 provided along with your login information.  The UDP host and port will be
@@ -55,4 +54,4 @@ an addon, `BlenderSync <https://blendersync.readthedocs.io/en/latest/>`__.
 Next
 ----
 
-:ref:`Continue on to the overview to read more about interacting with Aesel<tests>`
+:ref:`Continue on to the overview to read more about interacting with Aesel<overview>`
