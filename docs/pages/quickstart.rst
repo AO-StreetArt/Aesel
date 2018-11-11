@@ -15,8 +15,14 @@ Interacting with Aesel
 API
 ~~~
 
-Aesel's HTTP API will be available at http://localhost:8080.  The UDP API for CLyman
-(https://clyman.readthedocs.io/en/v2/pages/Events_API.html) is available at localhost:8762.
+If you setup a development environment, then Aesel's HTTP API will be available
+at http://localhost:8080.  The UDP API for CLyman
+(https://clyman.readthedocs.io/en/v2/pages/Events_API.html) is available at
+localhost:8762.
+
+If you are connecting to an existing Aesel Cloud, then the HTTP URL will be
+provided along with your login information.  The UDP host and port will be
+provided in the response of a Device Registration message.
 
 Official client libraries are available for the following languages:
 
