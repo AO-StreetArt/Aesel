@@ -19,3 +19,5 @@ Aesel HTTP API
    Object_Stream_API.rst
    Asset_API.rst
    Asset_Relationship_API.rst
+   Asset_Collection_API.rst
+   Project_API.rst
