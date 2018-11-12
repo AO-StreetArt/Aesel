@@ -67,6 +67,18 @@ services:
       - SERVER_MONGO_HOST=document-db
       - SPRING_CLOUD_CONSUL_HOST=registry
       - SPRING_CLOUD_CONSUL_DISCOVERY_PREFERIPADDRESS=true
+  projects:
+    image: aostreetart/aeselprojects:latest
+    container_name: projects
+    ports:
+      - "5644:5644"
+    depends_on:
+      registry:
+        condition: service_healthy
+    environment:
+      - MONGO_HOSTS=document-db
+      - SPRING_CLOUD_CONSUL_HOST=registry
+      - SPRING_CLOUD_CONSUL_DISCOVERY_PREFERIPADDRESS=true
   adrestia:
     image: aostreetart/adrestia:v2
     container_name: adrestia
@@ -81,6 +93,7 @@ services:
       - SERVICE_IVAN_HOST=crazyivan
       - SERVICE_CLYMAN_HOST=clyman
       - SERVICE_AVC_HOST=kelona
+      - SERVICE_PROJECTS_HOST=projects
       - SPRING_CLOUD_CONSUL_HOST=registry
       - SPRING_CLOUD_CONSUL_DISCOVERY_PREFERIPADDRESS=true
       - SPRING_CLOUD_CONSUL_DISCOVERY_HEALTHCHECKURL=http://adrestia:8080/actuator/health
