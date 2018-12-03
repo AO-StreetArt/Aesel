@@ -106,6 +106,13 @@ AES Information is set in the aesel.sh script, and can be generated with:
 
 Where 'secret' is a password for generating the key.
 
+Auth0 Setup
+~~~~~~~~~~~
+
+Add your Auth0 information into the deployment/full/config/adrestia/auth0.properties
+file.  You can follow `this guide <https://auth0.com/docs/quickstart/webapp/java-spring-security-mvc/01-login>`__
+to setup your Auth0 account to integrate with Adrestia correctly.
+
 Start Database Layer
 ~~~~~~~~~~~~~~~~~~~~
 
