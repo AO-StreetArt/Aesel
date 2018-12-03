@@ -1,0 +1,87 @@
+version: '3.4'
+
+services:
+  kelona:
+    image: aostreetart/kelona:latest
+    ports:
+      - "5635:5635"
+    volumes:
+      - ${SSL_BASE_DIR}:/ssl
+    extra_hosts:
+      - "${AESEL_DOMAIN}:${NETWORK_INTERFACE_ADDRESS}"
+    environment:
+      - MONGO_HOSTS=${AESEL_DOMAIN}
+      - MONGO_AUTH_ACTIVE=true
+      - MONGO_AUTH_USERNAME=${MONGO_INIT_USER}
+      - MONGO_AUTH_PASSWORD=${MONGO_INIT_PW}
+      - MONGO_SSL_ENABLED=true
+      - SERVER_SSL_KEY-STORE=/ssl/kelona/certificate.p12
+      - SERVER_SSL_KEY-STORE-PASSWORD=password
+      - SERVER_SSL_KEY-PASSWORD=password
+      - SERVER_AUTH_ACTIVE=true
+      - SERVER_AUTH_USERNAME=${KELONA_UN}
+      - SERVER_AUTH_PASSWORD=${KELONA_PW}
+      - SSL_TRUSTSTORE_PATH=/ssl/ca.crt
+      - SSL_TRUSTSTORE_PASSWORD=password
+      - SSL_KEYSTORE_PATH=/ssl/kelona/certificate.p12
+      - SSL_KEYSTORE_PASSWORD=password
+  projects:
+    image: aostreetart/aeselprojects:latest
+    ports:
+      - "5644:5644"
+    volumes:
+      - ${SSL_BASE_DIR}:/ssl
+    extra_hosts:
+      - "${AESEL_DOMAIN}:${NETWORK_INTERFACE_ADDRESS}"
+    environment:
+      - MONGO_HOSTS=${AESEL_DOMAIN}
+      - MONGO_AUTH_ACTIVE=true
+      - MONGO_AUTH_USERNAME=${MONGO_INIT_USER}
+      - MONGO_AUTH_PASSWORD=${MONGO_INIT_PW}
+      - MONGO_SSL_ENABLED=true
+      - SERVER_SSL_KEY-STORE=/ssl/kelona/certificate.p12
+      - SERVER_SSL_KEY-STORE-PASSWORD=password
+      - SERVER_SSL_KEY-PASSWORD=password
+      - SERVER_AUTH_ACTIVE=true
+      - SERVER_AUTH_USERNAME=${PROJECTS_UN}
+      - SERVER_AUTH_PASSWORD=${PROJECTS_PW}
+      - SSL_TRUSTSTORE_PATH=/ssl/ca.crt
+      - SSL_TRUSTSTORE_PASSWORD=password
+      - SSL_KEYSTORE_PATH=/ssl/kelona/certificate.p12
+      - SSL_KEYSTORE_PASSWORD=password
+  adrestia:
+    image: aostreetart/adrestia:v2
+    ports:
+      - "8080:8080"
+    volumes:
+      - ${SSL_BASE_DIR}:/ssl
+      - /var/auth0/auth0.properties:/auth/auth0.properties
+    extra_hosts:
+      - "${AESEL_DOMAIN}:${NETWORK_INTERFACE_ADDRESS}"
+    environment:
+      - MONGO_HOSTS=${AESEL_DOMAIN}
+      - MONGO_AUTH_ACTIVE=true
+      - MONGO_AUTH_USERNAME=${MONGO_INIT_USER}
+      - MONGO_AUTH_PASSWORD=${MONGO_INIT_PW}
+      - MONGO_SSL_ENABLED=true
+      - SERVICE_STATIC_CLUSTER=demo
+      - SERVICE_IVAN_HOST=${AESEL_DOMAIN}
+      - SERVICE_IVAN_USERNAME=${IVAN_UN}
+      - SERVICE_IVAN_PASSWORD=${IVAN_PW}
+      - SERVICE_CLYMAN_HOST=${AESEL_DOMAIN}
+      - SERVICE_CLYMAN_USERNAME=${CLYMAN_UN}
+      - SERVICE_CLYMAN_PASSWORD=${CLYMAN_PW}
+      - SERVICE_AVC_HOST=${AESEL_DOMAIN}
+      - SERVICE_AVC_USERNAME=${KELONA_UN}
+      - SERVICE_AVC_PASSWORD=${KELONA_PW}
+      - SERVICE_PROJECTS_HOST=${AESEL_DOMAIN}
+      - SERVICE_PROJECTS_USERNAME=${PROJECTS_UN}
+      - SERVICE_PROJECTS_PASSWORD=${PROJECTS_PW}
+      - SERVER_AUTH_ACTIVE=true
+      - SERVER_SSL_KEY-STORE=/ssl/kelona/certificate.p12
+      - SERVER_SSL_KEY-STORE-PASSWORD=password
+      - SERVER_SSL_KEY-PASSWORD=password
+      - SSL_TRUSTSTORE_PATH=/ssl/ca.crt
+      - SSL_TRUSTSTORE_PASSWORD=password
+      - SSL_KEYSTORE_PATH=/ssl/kelona/certificate.p12
+      - SSL_KEYSTORE_PASSWORD=password

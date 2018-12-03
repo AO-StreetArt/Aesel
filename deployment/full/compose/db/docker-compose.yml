@@ -1,0 +1,34 @@
+version: '3.4'
+
+services:
+  neo4j:
+    image: neo4j
+    ports:
+      - "7473:7473"
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - /var/lib/neo/data:/data
+      - ${SSL_BASE_DIR}:/ssl
+    environment:
+      - NEO4J_dbms_ssl_policy_default_trusted__dir=/ssl/trusted/neo4j
+      - NEO4J_dbms_ssl_policy_default_public__certificate=/ssl/neo4j/server.crt
+      - NEO4J_dbms_ssl_policy_default_private__key=/ssl/neo4j/server.key
+      - NEO4J_dbms_ssl_policy_default_base__directory=/ssl/neo4j/
+      - NEO4J_dbms_connector_https_enabled=true
+      - NEO4J_dbms_connector_https_listen__address=:7473
+      - NEO4J_dbms_connector_bolt_enabled=true
+      - NEO4J_dbms_connector_bolt_tls__level=OPTIONAL
+      - NEO4J_dbms_connector_bolt_address=0.0.0.0:7687
+    user: ${CURRENT_UID}
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - /var/lib/mongo/data:/data/db
+      - ${SSL_BASE_DIR}:/ssl
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INIT_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INIT_PW}
+    command: --sslMode requireSSL --sslPEMKeyFile /ssl/mongo/mongodb.pem --sslPEMKeyPassword ${PEM_PASSWORD} --sslCAFile /ssl/ca.pem

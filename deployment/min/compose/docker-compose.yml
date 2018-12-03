@@ -64,7 +64,7 @@ services:
       registry:
         condition: service_healthy
     environment:
-      - SERVER_MONGO_HOST=document-db
+      - MONGO_HOSTS=document-db
       - SPRING_CLOUD_CONSUL_HOST=registry
       - SPRING_CLOUD_CONSUL_DISCOVERY_PREFERIPADDRESS=true
   projects:
