@@ -31,6 +31,16 @@ for large-scale userbases.
 * `Home Page <https://github.com/AO-StreetArt/Kelona>`__
 * `Documentation <http://kelona.readthedocs.io/en/latest/>`__
 
+AeselProjects
+-------------
+
+AeselProjects stores project management information for collaborative 3-D
+projects (ie. Animation, Product Design, etc).  This provides organizational
+capabilities and a rich User Experience on large projects.
+
+* `Home Page <https://github.com/AO-StreetArt/AeselProjects>`__
+* `Documentation <https://aeselprojects.readthedocs.io/en/latest/>`__
+
 CLyman
 ------
 
