@@ -39,8 +39,8 @@ Congratulations, Aesel is now up and running on your computer!  To make sure tha
 correctly, open up your web browser after about 30 seconds and go to the address
 http://localhost:8080/portal/home.
 
-Starting a Secure Deployment
-----------------------------
+Starting a Secure, Single-Node Deployment
+-----------------------------------------
 
 This is a great option for Demo environments, or small LAN-based networks which
 only need to handle scenes for a few users.
@@ -74,28 +74,28 @@ enter into the AESEL_DOMAIN variable.
 You may need to copy/convert some of the certs around, below is a tree of the
 basic file structure needed in /var/ssl (or whatever you enter for the SSL_BASE_DIR):
 
--var
---ssl
----trusted
-----neo4j
------ca.crt
----neo4j
-----server.crt
-----server.key
----mongo
-----mongodb.pem
----clyman
-----server.crt
-----server.key
----ivan
-----server.crt
-----server.key
----adrestia
-----certificate.p12
----kelona
-----certificate.p12
----projects
-----certificate.p12
+|-var
+|--ssl
+|---trusted
+|----neo4j
+|-----ca.crt
+|---neo4j
+|----server.crt
+|----server.key
+|---mongo
+|----mongodb.pem
+|---clyman
+|----server.crt
+|----server.key
+|---ivan
+|----server.crt
+|----server.key
+|---adrestia
+|----certificate.p12
+|---kelona
+|----certificate.p12
+|---projects
+|----certificate.p12
 
 AES Configuration
 ~~~~~~~~~~~~~~~~~
@@ -139,6 +139,8 @@ NEO4J_UN and NEO4J_PW variables.  Then, you can update the variables for:
 * IVAN_PW
 * CLYMAN_UN
 * CLYMAN_PW
+* MONGO_INIT_USER
+* MONGO_INIT_PW
 
 Start Scene Cluster
 ~~~~~~~~~~~~~~~~~~~
