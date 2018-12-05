@@ -7,9 +7,11 @@
 
 .. include:: ../README.rst
 
+Documentation
+-------------
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    pages/getting_started_index.rst
    pages/DVS_API.rst
