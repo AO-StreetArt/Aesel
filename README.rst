@@ -17,6 +17,8 @@ and streams these out to devices that need them, as well as tracking relationshi
 different coordinate systems.  It will also ensure that 3D assets are distributed to all
 necessary devices.
 
+The Documentation for Aesel can be found on `ReadTheDocs <https://aesel.readthedocs.io/en/latest/index.html>`__.
+
 Stuck and need help?  Have general questions about the application?  We encourage you to publish your question
 on `Stack Overflow <https://stackoverflow.com>`__.  We regularly monitor for the tag 'aesel' in questions.
 
