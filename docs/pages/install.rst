@@ -74,28 +74,28 @@ enter into the AESEL_DOMAIN variable.
 You may need to copy/convert some of the certs around, below is a tree of the
 basic file structure needed in /var/ssl (or whatever you enter for the SSL_BASE_DIR):
 
-|  -var
-|  --ssl
-|  ---trusted
-|  ----neo4j
-|  -----ca.crt
-|  ---neo4j
-|  ----server.crt
-|  ----server.key
-|  ---mongo
-|  ----mongodb.pem
-|  ---clyman
-|  ----server.crt
-|  ----server.key
-|  ---ivan
-|  ----server.crt
-|  ----server.key
-|  ---adrestia
-|  ----certificate.p12
-|  ---kelona
-|  ----certificate.p12
-|  ---projects
-|  ----certificate.p12
+|  ~var
+|  ~~ssl
+|  ~~~trusted
+|  ~~~~neo4j
+|  ~~~~~ca.crt
+|  ~~~neo4j
+|  ~~~~server.crt
+|  ~~~~server.key
+|  ~~~mongo
+|  ~~~~mongodb.pem
+|  ~~~clyman
+|  ~~~~server.crt
+|  ~~~~server.key
+|  ~~~ivan
+|  ~~~~server.crt
+|  ~~~~server.key
+|  ~~~adrestia
+|  ~~~~certificate.p12
+|  ~~~kelona
+|  ~~~~certificate.p12
+|  ~~~projects
+|  ~~~~certificate.p12
 
 AES Configuration
 ~~~~~~~~~~~~~~~~~
