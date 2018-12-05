@@ -28,3 +28,21 @@ We encourage the use of Stack Overflow for a few reasons:
 * The forum format offers an easy method to get a larger community involved with a tougher question.
 
 If you believe that you have found a bug in Aesel, or have an enhancement request, we encourage you to raise an issue on our `github page <https://github.com/AO-StreetArt/Aesel>`__.
+
+Other Aesel Repositories
+------------------------
+
+Components
+~~~~~~~~~~
+
+* `Adrestia <https://github.com/AO-StreetArt/Adrestia>`__
+* `Crazy Ivan <https://github.com/AO-StreetArt/CrazyIvan>`__
+* `CLyman <https://github.com/AO-StreetArt/CLyman>`__
+* `Kelona <https://github.com/AO-StreetArt/Kelona>`__
+* `AeselProjects <https://github.com/AO-StreetArt/AeselProjects>`__
+
+Clients and Integrations
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* `Blender Sync <https://github.com/AO-StreetArt/BlenderSync>`__
+* `PyAesel <https://github.com/AO-StreetArt/PyAesel>`__
