@@ -125,7 +125,7 @@ Then, an example user creation for Adrestia is shown below:
  roles:[
   {
      role:"readWrite",
-     db:"u8"
+     db:"_adrestia"
   }
  ],
  mechanisms:[
