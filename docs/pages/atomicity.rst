@@ -22,6 +22,6 @@ Object Change Streams
 ---------------------
 
 In the Object Change Stream API, a significant change occurs in the API.  We still guarantee atomic transactions,
-but the results of any event may fail to reach any given device.  For this reason, users are generally expected to
-send a large volume of these messages in most cases, continually informing Aesel of the current values of the object
-or property in question.
+but the results of any event may fail to reach any given device, or an event may fail to transfer to the server
+altogether.  For this reason, users are generally expected to send a large volume of these messages in most cases,
+continually informing Aesel of the current values of the object or property in question.

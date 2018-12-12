@@ -31,4 +31,4 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INIT_USER}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INIT_PW}
-    command: --sslMode requireSSL --sslPEMKeyFile /ssl/mongo/mongodb.pem --sslPEMKeyPassword ${PEM_PASSWORD} --sslCAFile /ssl/ca.pem
+    command: --sslMode requireSSL --sslPEMKeyFile /ssl/mongo/mongodb.pem --sslPEMKeyPassword ${PEM_PASSWORD} --bind_ip 0.0.0.0

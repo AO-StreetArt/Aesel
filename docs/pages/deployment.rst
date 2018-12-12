@@ -14,6 +14,11 @@ Note that the above recommendations are minimum requirements, and production dep
 will likely require significantly more resources, especially when handling very high-volumes
 of traffic.
 
+Deployment Guides
+-----------------
+* :ref:`Development Environment<install>`
+* :ref:`Secure, Single-Server Environment<demo_install>`
+
 Scalability
 -----------
 
@@ -76,7 +81,6 @@ with the address of your instance.
 
 You can follow `this guide <https://auth0.com/docs/quickstart/webapp/java-spring-security-mvc/01-login>`__
 to setup your Auth0 account to integrate with Adrestia correctly.
-
 
 Events
 ~~~~~~

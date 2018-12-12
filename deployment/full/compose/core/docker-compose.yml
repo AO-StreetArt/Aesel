@@ -15,16 +15,15 @@ services:
       - MONGO_AUTH_USERNAME=${MONGO_INIT_USER}
       - MONGO_AUTH_PASSWORD=${MONGO_INIT_PW}
       - MONGO_SSL_ENABLED=true
-      - SERVER_SSL_KEY-STORE=/ssl/kelona/certificate.p12
-      - SERVER_SSL_KEY-STORE-PASSWORD=password
-      - SERVER_SSL_KEY-PASSWORD=password
+      - SERVER_SSL_KEYSTORE=/ssl/kelona/certificate.p12
+      - SERVER_SSL_KEYSTOREPASSWORD=${SSL_KEYSTORE_PW}
+      - SERVER_SSL_KEYSTORETYPE=PKCS12
+      - SERVER_SSL_KEYALIAS=tomcat
       - SERVER_AUTH_ACTIVE=true
       - SERVER_AUTH_USERNAME=${KELONA_UN}
       - SERVER_AUTH_PASSWORD=${KELONA_PW}
-      - SSL_TRUSTSTORE_PATH=/ssl/ca.crt
-      - SSL_TRUSTSTORE_PASSWORD=password
       - SSL_KEYSTORE_PATH=/ssl/kelona/certificate.p12
-      - SSL_KEYSTORE_PASSWORD=password
+      - SSL_KEYSTORE_PASSWORD=${SSL_KEYSTORE_PW}
   projects:
     image: aostreetart/aeselprojects:latest
     ports:
@@ -39,30 +38,28 @@ services:
       - MONGO_AUTH_USERNAME=${MONGO_INIT_USER}
       - MONGO_AUTH_PASSWORD=${MONGO_INIT_PW}
       - MONGO_SSL_ENABLED=true
-      - SERVER_SSL_KEY-STORE=/ssl/kelona/certificate.p12
-      - SERVER_SSL_KEY-STORE-PASSWORD=password
-      - SERVER_SSL_KEY-PASSWORD=password
+      - SERVER_SSL_KEYSTORE=/ssl/kelona/certificate.p12
+      - SERVER_SSL_KEYSTOREPASSWORD=${SSL_KEYSTORE_PW}
+      - SERVER_SSL_KEYSTORETYPE=PKCS12
+      - SERVER_SSL_KEYALIAS=tomcat
       - SERVER_AUTH_ACTIVE=true
       - SERVER_AUTH_USERNAME=${PROJECTS_UN}
       - SERVER_AUTH_PASSWORD=${PROJECTS_PW}
-      - SSL_TRUSTSTORE_PATH=/ssl/ca.crt
-      - SSL_TRUSTSTORE_PASSWORD=password
       - SSL_KEYSTORE_PATH=/ssl/kelona/certificate.p12
-      - SSL_KEYSTORE_PASSWORD=password
+      - SSL_KEYSTORE_PASSWORD=${SSL_KEYSTORE_PW}
   adrestia:
     image: aostreetart/adrestia:v2
     ports:
       - "8080:8080"
     volumes:
       - ${SSL_BASE_DIR}:/ssl
-      - /var/auth0/auth0.properties:/auth/auth0.properties
     extra_hosts:
       - "${AESEL_DOMAIN}:${NETWORK_INTERFACE_ADDRESS}"
     environment:
       - MONGO_HOSTS=${AESEL_DOMAIN}
       - MONGO_AUTH_ACTIVE=true
-      - MONGO_AUTH_USERNAME=${MONGO_INIT_USER}
-      - MONGO_AUTH_PASSWORD=${MONGO_INIT_PW}
+      - MONGO_AUTH_USERNAME=${MONGO_ADRESTIA_USER}
+      - MONGO_AUTH_PASSWORD=${MONGO_ADRESTIA_PW}
       - MONGO_SSL_ENABLED=true
       - SERVICE_STATIC_CLUSTER=demo
       - SERVICE_IVAN_HOST=${AESEL_DOMAIN}
@@ -78,10 +75,12 @@ services:
       - SERVICE_PROJECTS_USERNAME=${PROJECTS_UN}
       - SERVICE_PROJECTS_PASSWORD=${PROJECTS_PW}
       - SERVER_AUTH_ACTIVE=true
-      - SERVER_SSL_KEY-STORE=/ssl/kelona/certificate.p12
-      - SERVER_SSL_KEY-STORE-PASSWORD=password
-      - SERVER_SSL_KEY-PASSWORD=password
-      - SSL_TRUSTSTORE_PATH=/ssl/ca.crt
-      - SSL_TRUSTSTORE_PASSWORD=password
+      - SERVER_AUTH_USER=${ADRESTIA_INIT_UN}
+      - SERVER_AUTH_PW=${ADRESTIA_INIT_PW}
+      - SERVER_AUTH_SECRET=th3b1gs3cr3t;
+      - SERVER_SSL_KEYSTORE=/ssl/kelona/certificate.p12
+      - SERVER_SSL_KEYSTOREPASSWORD=${SSL_KEYSTORE_PW}
+      - SERVER_SSL_KEYSTORETYPE=PKCS12
+      - SERVER_SSL_KEYALIAS=tomcat
       - SSL_KEYSTORE_PATH=/ssl/kelona/certificate.p12
-      - SSL_KEYSTORE_PASSWORD=password
+      - SSL_KEYSTORE_PASSWORD=${SSL_KEYSTORE_PW}

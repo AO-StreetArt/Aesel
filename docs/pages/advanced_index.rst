@@ -15,4 +15,5 @@ Advanced Topics
    authentication.rst
    components.rst
    deployment.rst
+   demo_install.rst
    atomicity.rst
