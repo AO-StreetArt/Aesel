@@ -12,6 +12,8 @@ Aesel HTTP API
    :maxdepth: 1
    :caption: Contents:
 
+   Login_API.rst
+   Users_API.rst
    Scene_API.rst
    Scene_Registration_API.rst
    Object_API.rst
