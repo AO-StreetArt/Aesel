@@ -25,7 +25,8 @@ If you are accessing a secure environment, then you can access the web UI at:
 
 * Aesel Web UI - https://aesel-cloud-demo.com/portal/login
 
-with a valid username and password.
+with a valid username and password (you can login to the above link with the
+username 'demo', and the password 'demo').
 
 API
 ~~~

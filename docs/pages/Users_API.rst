@@ -12,7 +12,7 @@ standard users.
 User Creation
 ~~~~~~~~~~~~~
 
-.. http:post:: /v1/users/sign-up
+.. http:post:: /users/sign-up
 
    Create a new User.  Please note that only adminstrator users can access this endpoint.
 
