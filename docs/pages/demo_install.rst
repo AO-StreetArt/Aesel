@@ -95,8 +95,10 @@ To start the Aesel DB Layer, run the below command:
 
 `./aesel.sh db`
 
-Then, you can go to localhost:7474/browser in a web browser, and update the Neo4j
-login information.
+The easiest way to update the neo4j login information is to use
+`Neo4j Client <https://neo4j-client.net/>`__.  Simply connect to
+your instance with username and password neo4j/neo4j, and you will
+be prompted to change the password.
 
 Finally, you'll need to setup a Mongo admin user, and separate users for Adrestia
 and CLyman.  You can connect from the same server using the mongo shell with:

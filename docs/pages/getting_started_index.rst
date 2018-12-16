@@ -14,5 +14,6 @@ Getting Started
 
    install.rst
    quickstart.rst
+   web_ui_quickstart.rst
    overview.rst
    loading.rst
