@@ -9,6 +9,10 @@ export MONGO_CLYMAN_USER=mongo
 export MONGO_CLYMAN_PW=password
 export MONGO_ADRESTIA_USER=mongo
 export MONGO_ADRESTIA_PW=password
+export MONGO_PROJECTS_USER=mongo
+export MONGO_PROJECTS_PW=password
+export MONGO_KELONA_USER=mongo
+export MONGO_KELONA_PW=password
 export NEO4J_USER=neo4j
 export NEO4J_PW=password
 

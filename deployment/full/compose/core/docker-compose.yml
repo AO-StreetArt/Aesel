@@ -12,8 +12,8 @@ services:
     environment:
       - MONGO_HOSTS=${AESEL_DOMAIN}
       - MONGO_AUTH_ACTIVE=true
-      - MONGO_AUTH_USERNAME=${MONGO_INIT_USER}
-      - MONGO_AUTH_PASSWORD=${MONGO_INIT_PW}
+      - MONGO_AUTH_USERNAME=${MONGO_KELONA_USER}
+      - MONGO_AUTH_PASSWORD=${MONGO_KELONA_PW}
       - MONGO_SSL_ENABLED=true
       - SERVER_SSL_KEYSTORE=/ssl/kelona/certificate.p12
       - SERVER_SSL_KEYSTOREPASSWORD=${SSL_KEYSTORE_PW}
@@ -35,8 +35,8 @@ services:
     environment:
       - MONGO_HOSTS=${AESEL_DOMAIN}
       - MONGO_AUTH_ACTIVE=true
-      - MONGO_AUTH_USERNAME=${MONGO_INIT_USER}
-      - MONGO_AUTH_PASSWORD=${MONGO_INIT_PW}
+      - MONGO_AUTH_USERNAME=${MONGO_PROJECTS_USER}
+      - MONGO_AUTH_PASSWORD=${MONGO_PROJECTS_PW}
       - MONGO_SSL_ENABLED=true
       - SERVER_SSL_KEYSTORE=/ssl/kelona/certificate.p12
       - SERVER_SSL_KEYSTOREPASSWORD=${SSL_KEYSTORE_PW}
@@ -50,12 +50,17 @@ services:
   adrestia:
     image: aostreetart/adrestia:v2
     ports:
-      - "8080:8080"
+      - "443:8080"
+      - "3000:3000"
     volumes:
       - ${SSL_BASE_DIR}:/ssl
     extra_hosts:
       - "${AESEL_DOMAIN}:${NETWORK_INTERFACE_ADDRESS}"
     environment:
+      - ZUUL_ROUTES_V1_URL=https://localhost:8090
+      - RIBBON_ISSECURE=true
+      - ZUUL_HOST_CONNECTTIMEOUTMILLIS=30000
+      - ZUUL_HOST_SOCKETTIMEOUTMILLIS=30000
       - MONGO_HOSTS=${AESEL_DOMAIN}
       - MONGO_AUTH_ACTIVE=true
       - MONGO_AUTH_USERNAME=${MONGO_ADRESTIA_USER}
@@ -78,6 +83,7 @@ services:
       - SERVER_AUTH_USER=${ADRESTIA_INIT_UN}
       - SERVER_AUTH_PW=${ADRESTIA_INIT_PW}
       - SERVER_AUTH_SECRET=th3b1gs3cr3t;
+      - SERVER_AUTH_REDIRECT=local
       - SERVER_SSL_KEYSTORE=/ssl/kelona/certificate.p12
       - SERVER_SSL_KEYSTOREPASSWORD=${SSL_KEYSTORE_PW}
       - SERVER_SSL_KEYSTORETYPE=PKCS12

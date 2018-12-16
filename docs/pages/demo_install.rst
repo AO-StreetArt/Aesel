@@ -36,6 +36,12 @@ default of '/var/ssl'.
 Make sure to update the 'NETWORK_INTERFACE_ADDRESS' environment variable to your
 server's public IP address before continuing.
 
+Finally, set the Mongo init credentials, that can be used to connect only from
+the same server that Mongo is running on, in order to administer it.
+
+* MONGO_INIT_USER
+* MONGO_INIT_PW
+
 SSL Setup
 ---------
 
@@ -43,7 +49,9 @@ Before we go any further, let's go ahead and obtain valid SSL Certificates. The
 best way to do this is through Let's Encrypt, you can follow the tutorials
 at https://certbot.eff.org/.  Self-Signed Certificates are not supported.
 Make sure that you're certificates are registered to the same domain that you
-enter into the AESEL_DOMAIN variable.
+enter into the AESEL_DOMAIN variable.  A basic example certbot command is shown below:
+
+`certbot certonly --standalone --preferred-challenges http -d AESEL_DOMAIN`
 
 You may need to copy/convert some of the certs around, below is a tree of the
 basic file structure needed in /var/ssl (or whatever you enter for the SSL_BASE_DIR):
@@ -101,7 +109,8 @@ your instance with username and password neo4j/neo4j, and you will
 be prompted to change the password.
 
 Finally, you'll need to setup a Mongo admin user, and separate users for Adrestia
-and CLyman.  You can connect from the same server using the mongo shell with:
+and CLyman.  You can connect from the same server running Mongo by using the
+mongo shell with:
 
 `mongo admin -u <mongo-init-un> -p <mongo-init-pw>`
 
@@ -135,7 +144,8 @@ Then, an example user creation for Adrestia is shown below:
  ]
 })`
 
-A similar user should be created for CLyman in the database 'clyman'.
+A similar user should be created for CLyman in the database 'clyman', Projects in
+the database '_projects', and Kelona in the database '_avc'.
 
 Authentication Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -153,14 +163,14 @@ NEO4J_UN and NEO4J_PW variables.  Then, you can update the variables for:
 * IVAN_PW
 * CLYMAN_UN
 * CLYMAN_PW
-* MONGO_INIT_USER
-* MONGO_INIT_PW
 * MONGO_CLYMAN_USER
 * MONGO_CLYMAN_PW
 * MONGO_ADRESTIA_USER
 * MONGO_ADRESTIA_PW
-
-As well as all of the various AES environment variables.
+* MONGO_KELONA_USER
+* MONGO_KELONA_PW
+* MONGO_PROJECTS_USER
+* MONGO_PROJECTS_PW
 
 Start Scene Cluster
 ~~~~~~~~~~~~~~~~~~~
