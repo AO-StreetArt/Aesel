@@ -14,7 +14,7 @@ User Creation
 
 .. http:post:: /v1/users/sign-up
 
-   Create a new User.  Please note that only adminstrator users can access this endpoint.
+   Create a new User.  Please note that only administrator users can access this endpoint.
 
    :reqheader Content-Type: application/json
    :statuscode 200: Success

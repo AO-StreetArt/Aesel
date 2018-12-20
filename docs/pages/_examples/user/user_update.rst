@@ -7,7 +7,7 @@
     {
     	"username": "guest2",
       "password": "guest2",
-      "email": "test2@test.com"
+      "email": "test2@test.com",
       "isAdmin": false,
       "isActive": true,
       "favoriteProjects": [],
