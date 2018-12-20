@@ -14,12 +14,12 @@ Aesel HTTP API
 
    Login_API.rst
    Users_API.rst
-   Scene_API.rst
-   Scene_Registration_API.rst
-   Object_API.rst
-   Property_API.rst
-   Object_Stream_API.rst
    Asset_API.rst
    Asset_Relationship_API.rst
    Asset_Collection_API.rst
+   Object_API.rst
+   Property_API.rst
+   Scene_API.rst
+   Scene_Registration_API.rst
    Project_API.rst
+   Object_Stream_API.rst

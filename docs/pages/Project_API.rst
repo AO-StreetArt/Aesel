@@ -22,7 +22,7 @@ Project Creation
 Project Retrieval
 ~~~~~~~~~~~~~~~~~
 
-.. http:get:: /v1/project/{key}
+.. http:get:: /v1/project/(key)
 
    Get a project by ID.
 
@@ -33,7 +33,7 @@ Project Retrieval
 Project Update
 ~~~~~~~~~~~~~~
 
-.. http:post:: /v1/project/{key}
+.. http:post:: /v1/project/(key)
 
    Create a new Project.
 
@@ -56,7 +56,7 @@ Project Query
 Project Delete
 ~~~~~~~~~~~~~~
 
-.. http:delete:: /v1/project/{key}
+.. http:delete:: /v1/project/(key)
 
    Delete a project by ID.
 

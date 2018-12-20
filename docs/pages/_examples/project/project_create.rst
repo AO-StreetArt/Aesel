@@ -1,4 +1,4 @@
-..  http:example:: curl wget httpie python-requests
+..  http:example:: curl
     :response: project_create_response.rst
 
     POST /v1/project HTTP/1.1
