@@ -1,13 +1,13 @@
 ..  http:example:: curl
 
-    POST /users/sign-up HTTP/1.1
+    PUT /users/{key} HTTP/1.1
     Host: localhost:8080
     Content-Type: application/json
 
     {
-    	"username": "aesel",
-      "password": "guest",
-      "email": "test@test.com"
+    	"username": "guest2",
+      "password": "guest2",
+      "email": "test2@test.com"
       "isAdmin": false,
       "isActive": true,
       "favoriteProjects": [],

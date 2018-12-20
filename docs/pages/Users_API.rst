@@ -12,7 +12,7 @@ standard users.
 User Creation
 ~~~~~~~~~~~~~
 
-.. http:post:: /users/sign-up
+.. http:post:: /v1/users/sign-up
 
    Create a new User.  Please note that only adminstrator users can access this endpoint.
 
@@ -20,3 +20,48 @@ User Creation
    :statuscode 200: Success
 
 .. include:: _examples/user/user_create.rst
+
+User Retrieval
+~~~~~~~~~~~~~~
+
+.. http:get:: /v1/users/(key)
+
+   Get a User by ID.
+
+   :statuscode 200: Success
+
+.. include:: _examples/user/user_get.rst
+
+User Update
+~~~~~~~~~~~
+
+.. http:put:: /v1/users/(key)
+
+   Update an existing User.
+
+   :reqheader Content-Type: application/json
+   :statuscode 200: Success
+
+.. include:: _examples/user/user_update.rst
+
+User Query
+~~~~~~~~~~
+
+.. http:get:: /v1/users/
+
+   Query for users by attribute.
+
+   :statuscode 200: Success
+
+.. include:: _examples/user/user_query.rst
+
+User Delete
+~~~~~~~~~~~
+
+.. http:delete:: /v1/users/(key)
+
+   Delete a user by ID.
+
+   :statuscode 200: Success
+
+.. include:: _examples/user/user_delete.rst
