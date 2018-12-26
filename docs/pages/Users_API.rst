@@ -37,12 +37,63 @@ User Update
 
 .. http:put:: /v1/users/(key)
 
-   Update an existing User.
+   Update an existing User's basic (String or number) attributes.
+   This endpoint cannot update list attributes, including favorite
+   projects and favorite scenes.  These can be updated by the
+   respective HTTP endpoints.
 
    :reqheader Content-Type: application/json
    :statuscode 200: Success
 
 .. include:: _examples/user/user_update.rst
+
+Add Favorite Project
+~~~~~~~~~~~~~~~~~~~~
+
+.. http:put:: /v1/users/(key)/projects/(projectKey)
+
+   Atomically add a Project Key to the favoriteProjects list of the user.
+
+   :reqheader Content-Type: application/json
+   :statuscode 200: Success
+
+.. include:: _examples/user/user_add_fav_project.rst
+
+Remove Favorite Project
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. http:delete:: /v1/users/(key)/projects/(projectKey)
+
+   Atomically remove a Project Key from the favoriteProjects list of the user.
+
+   :reqheader Content-Type: application/json
+   :statuscode 200: Success
+
+.. include:: _examples/user/user_remove_fav_project.rst
+
+Add Favorite Scene
+~~~~~~~~~~~~~~~~~~
+
+.. http:put:: /v1/users/(key)/scenes/(sceneKey)
+
+   Atomically add a Scene Key to the favoriteScenes list of the user.
+
+   :reqheader Content-Type: application/json
+   :statuscode 200: Success
+
+.. include:: _examples/user/user_add_fav_scene.rst
+
+Remove Favorite Scene
+~~~~~~~~~~~~~~~~~~~~~
+
+.. http:delete:: /v1/users/(key)/scenes/(sceneKey)
+
+   Atomically remove a Scene Key from the favoriteScenes list of the user.
+
+   :reqheader Content-Type: application/json
+   :statuscode 200: Success
+
+.. include:: _examples/user/user_remove_fav_scene.rst
 
 User Query
 ~~~~~~~~~~

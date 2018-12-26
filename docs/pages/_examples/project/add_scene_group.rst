@@ -1,7 +1,6 @@
 ..  http:example:: curl
-    :response: project_create_response.rst
 
-    POST /v1/project/{key} HTTP/1.1
+    POST /v1/project/{key}/groups HTTP/1.1
     Host: localhost:5635
     Content-Type: application/json
 
