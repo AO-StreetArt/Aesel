@@ -2,7 +2,7 @@
     :response: project_create_response.rst
 
     POST /v1/project HTTP/1.1
-    Host: localhost:5635
+    Host: localhost:8080
     Content-Type: application/json
 
     {
@@ -10,6 +10,7 @@
     	"description": "This is a test",
     	"category": "test",
     	"tags": ["testTag"],
+      "isPublic": true,
     	"sceneGroups": [
     		{
     			"name": "testGroup",

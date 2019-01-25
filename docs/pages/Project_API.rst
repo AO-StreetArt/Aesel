@@ -7,6 +7,10 @@ A Project contains groups of scenes, as well as Asset Collections.  It is
 primarily used for organization, and helps manage a full-scale animation
 production.
 
+When authentication is active, projects are associated to the user that
+creates them and can be public or private.  Users can only interact with
+projects that are either public, or that they own.
+
 Project Creation
 ~~~~~~~~~~~~~~~~
 

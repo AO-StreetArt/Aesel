@@ -5,6 +5,10 @@ A Scene is a group of Objects associated to a particular Latitude and
 Longitude. Examples of Scenes include levels in a video game, rooms in a house,
 and shots in a movie.  This API exposes CRUD and Query operations for Scenes.
 
+When authentication is active, scenes are associated to the user that
+creates them and can be public or private.  Users can only interact with
+scenes that are either public, or that they own.
+
 Scene Creation
 ~~~~~~~~~~~~~~
 
@@ -65,6 +69,9 @@ Scene Query
    The fields ‘latitude’, ‘longitude’, and ‘distance’ should always
    appear together if present. The distance provided is taken in
    kilometers.
+
+   Multiple scenes can be passed in the scene_list attribute, and the
+   return value will be the sum of the results from each query.
 
    :reqheader Content-Type: Application/json
    :statuscode 200: Success

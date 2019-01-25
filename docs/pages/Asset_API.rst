@@ -5,7 +5,7 @@ An asset is a resource that each device will need in order to accurately
 depict objects around it. This can vary, from an .obj file, containing
 mesh information, to a .glsl file, containing shader information, to a
 .png or .jpg file containing an image. Assets can either be associated
-to a Scene or an Object.
+to a Scene or an Object, or anything else by Asset Relationships.
 
 A Scene Asset is a file that devices may need to utilize in order to
 synchronize views of scenes with other devices, such as a photograph of
@@ -17,6 +17,10 @@ An Object Asset is a file that is used to construct an Object. Entire
 collections of assets are expected to be downloaded for each object, and
 so registering to a scene is expected to incur a large set of downloads
 to collect all of the assets within that scene.
+
+When authentication is active, assets are associated to the user that
+creates them and can be public or private.  Users can only interact with
+assets that are either public, or that they own.
 
 Asset Creation
 ~~~~~~~~~~~~~~
@@ -32,6 +36,7 @@ Asset Creation
    :query string related-id: Optional.  Must appear with 'related-type'.  Used to create a relationship to the specified object.
    :query string related-type: Optional.  Must appear with 'related-id'.  Used the create a relationship of the specified type.
    :query string asset-type: Optional.  Populated into the query-able Asset Metadata.
+   :query boolean isPublic: Optional.  Is the asset public or proviate
    :reqheader Content-Type: multipart/*
    :statuscode 200: Success
 
@@ -94,6 +99,18 @@ Asset Metadata Query
    :statuscode 200: Success
 
 .. include:: _examples/asset/asset_query.rst
+
+Asset Metadata Batch Query
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. http:post:: /v1/bulk/asset
+
+   Get Asset Metadata by IDs in bulk.
+
+   :reqheader Content-Type: application/json
+   :statuscode 200: Success
+
+.. include:: _examples/collection/asset_query_bulk.rst
 
 Asset Deletion
 ~~~~~~~~~~~~~~

@@ -1,5 +1,5 @@
 HTTP/1.1 200 OK
-Location: http://localhost:5635/v1/collection?name=test&num_records=10&page=0
+Location: http://localhost:8080/v1/collection?name=test&num_records=10&page=0
 
 [
     {

@@ -10,6 +10,10 @@ asset libraries.
 Collections are associated to Assets through Relationships, allowing
 Collections to stay up to date with the latest versions of each Asset.
 
+When authentication is active, collections are associated to the user that
+creates them and can be public or private.  Users can only interact with
+collections that are either public, or that they own.
+
 Asset Collection Creation
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -32,6 +36,18 @@ Asset Collection Retrieval
    :statuscode 200: Success
 
 .. include:: _examples/collection/collection_get.rst
+
+Asset Collection Batch Retrieval
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. http:post:: /v1/bulk/collection
+
+   Get Asset Collections by IDs in bulk.
+
+   :reqheader Content-Type: application/json
+   :statuscode 200: Success
+
+.. include:: _examples/collection/collection_get_bulk.rst
 
 Asset Collection Update
 ~~~~~~~~~~~~~~~~~~~~~~~

@@ -13,7 +13,8 @@
           "latitude":124,
           "longitude":122,
           "assets":["TestAsset10"],
-          "tags":["Testing2"]
+          "tags":["Testing2"],
+          "public": true
         }
       ]
     }

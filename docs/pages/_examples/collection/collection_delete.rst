@@ -1,4 +1,4 @@
-..  http:example:: curl wget httpie python-requests
+..  http:example:: curl
 
     DELETE /v1/collection/{key} HTTP/1.1
-    Host: localhost:5635
+    Host: localhost:8080

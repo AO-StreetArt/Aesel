@@ -95,6 +95,54 @@ Remove Favorite Scene
 
 .. include:: _examples/user/user_remove_fav_scene.rst
 
+Make User Admin
+~~~~~~~~~~~~~~~
+
+.. http:put:: /v1/users/(key)/admin
+
+   Make a user an administrator.
+
+   :reqheader Content-Type: application/json
+   :statuscode 200: Success
+
+.. include:: _examples/user/user_make_admin.rst
+
+Make User Non-Admin
+~~~~~~~~~~~~~~~~~~~
+
+.. http:delete:: /v1/users/(key)/admin
+
+   Remove administrator access from a user.
+
+   :reqheader Content-Type: application/json
+   :statuscode 200: Success
+
+.. include:: _examples/user/user_make_non_admin.rst
+
+Activate User
+~~~~~~~~~~~~~
+
+.. http:put:: /v1/users/(key)/active
+
+   Activate a user.
+
+   :reqheader Content-Type: application/json
+   :statuscode 200: Success
+
+.. include:: _examples/user/user_activate.rst
+
+Deactivate User
+~~~~~~~~~~~~~~~
+
+.. http:delete:: /v1/users/(key)/active
+
+   Deactivate a user, revoking all access until they are reactivated.
+
+   :reqheader Content-Type: application/json
+   :statuscode 200: Success
+
+.. include:: _examples/user/user_deactivate.rst
+
 User Query
 ~~~~~~~~~~
 
