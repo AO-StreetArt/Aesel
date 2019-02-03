@@ -7,6 +7,8 @@
 
     {
       "assetId": "asset123",
+      "assetSubId": "meshName",
       "relationshipType": "scene",
+      "relationshipSubtype": "mesh",
       "relatedId": "scene123"
     }
