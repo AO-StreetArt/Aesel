@@ -51,6 +51,7 @@ services:
       - CLYMAN_PROD_HTTP_HOST=clyman
       - CLYMAN_PROD_EVENT_DESTINATION_HOST=${NETWORK_INTERFACE_ADDRESS}
       - CLYMAN_PROD_EVENT_DESTINATION_PORT=8764
+      - CLYMAN_PROD_TRANSACTION_SECURITY_AUTH_TYPE=none
     command: consul=http://registry:8500
     depends_on:
       registry:
