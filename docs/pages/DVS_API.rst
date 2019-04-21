@@ -17,9 +17,9 @@ Aesel HTTP API
    Asset_API.rst
    Asset_Relationship_API.rst
    Asset_Collection_API.rst
-   Object_API.rst
-   Property_API.rst
+   Object API <https://clyman.readthedocs.io/en/v2/pages/Object_API.html>
+   Property API <https://clyman.readthedocs.io/en/v2/pages/Property_API.html>
    Scene_API.rst
    Scene_Registration_API.rst
    Project_API.rst
-   Object_Stream_API.rst
+   Object Stream API <https://clyman.readthedocs.io/en/v2/pages/Events_API.html>
